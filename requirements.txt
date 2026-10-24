@@ -1,0 +1,10 @@
+# Python dependencies for the ADA flight-delay-propagation project.
+# Install with:  pip install -r requirements.txt
+#
+# Only Thrupthi's modules (data_ingestion, preprocessing, tests) need the
+# packages below. Teammates may add their own dependencies to this file as
+# they build their modules.
+
+pandas>=2.0          # data loading, cleaning, timestamps
+numpy>=1.24           # numerical support (installed with pandas)
+pytest>=7.0           # preprocessing / ingestion tests

@@ -218,3 +218,35 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---------------------------------------------------------------------------
+# ADA flight-delay-propagation project: data and generated outputs
+# ---------------------------------------------------------------------------
+# Keep large raw BTS data OUT of Git (one month is tens of MB, a year is GBs).
+# Place downloaded CSVs in data/raw/ locally; they are reproducible from BTS,
+# not version-controlled.
+data/raw/*
+!data/raw/.gitkeep
+
+# Processed/cleaned datasets are generated from raw data by the pipeline, so
+# they are not committed. Keep the directory via .gitkeep; allow the small
+# column-mapping JSON to be tracked for traceability.
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/column_mapping.json
+
+# Small, clearly-labelled samples may be committed if useful; ignore large ones.
+data/sample/*
+!data/sample/.gitkeep
+!data/sample/*.csv
+
+# Generated large result files are not committed; the data-quality report
+# (markdown + json) is small and reproducible, so allow it.
+results/*
+!results/.gitkeep
+!results/*.md
+!results/*.json
+
+# Local scratch / verification
+.verify/
+

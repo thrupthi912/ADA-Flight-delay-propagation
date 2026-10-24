@@ -1,0 +1,2 @@
+Year,Month,DayofMonth,DayOfWeek,FlightDate,UniqueCarrier,TailNum,FlightNum,Origin,Dest,CRSDepTime,DepTime,DepDelay,CRSArrTime,ArrTime,ArrDelay,Cancelled,Diverted,CRSElapsedTime,ActualElapsedTime,Distance
+2024,1,5,5,20240105,AA,N123AB,100,JFK,LAX,2230,2235,5,0030,0040,10,0,0,120,125,2475
