@@ -5,8 +5,8 @@ import pandas as pd
 import pytest
 
 from src.data_ingestion import (
-    ALIASES, COLUMN_MAP, REQUIRED_FIELDS,
-    basic_info, load_raw, save_sample, validate_columns,
+    ALIASES, COLUMN_MAP, REQUIRED_FIELDS, ESSENTIAL_FIELDS,
+    basic_info, load_raw, require_columns, save_sample, validate_columns,
 )
 from conftest import SAMPLE_FLIGHTS, SAMPLE_OLD_NAMES
 
@@ -17,7 +17,7 @@ from conftest import SAMPLE_FLIGHTS, SAMPLE_OLD_NAMES
 def test_load_raw_returns_dataframe():
     df = load_raw(SAMPLE_FLIGHTS)
     assert isinstance(df, pd.DataFrame)
-    assert df.shape[0] == 8
+    assert df.shape[0] == 9
     # Raw columns are the original BTS PascalCase names.
     assert "Tail_Number" in df.columns
     assert "CRSDepTime" in df.columns
@@ -74,13 +74,23 @@ def test_validate_columns_reports_missing():
     assert "CRSDepTime" in val["missing"]
 
 
+def test_require_columns_raises_when_essential_missing():
+    # flight_date is missing -> ValueError
+    with pytest.raises(ValueError):
+        require_columns(["origin", "dest", "crs_dep_time"])
+
+
+def test_require_columns_passes_when_all_present():
+    require_columns(["flight_date", "origin", "dest", "crs_dep_time"])  # no raise
+
+
 # ---------------------------------------------------------------------------
 # basic_info / save_sample
 # ---------------------------------------------------------------------------
 def test_basic_info_shape_and_columns():
     df = load_raw(SAMPLE_FLIGHTS)
     info = basic_info(df, source=SAMPLE_FLIGHTS)
-    assert info["n_rows"] == 8
+    assert info["n_rows"] == 9
     assert info["n_cols"] == df.shape[1]
     assert info["source"] == SAMPLE_FLIGHTS
     assert "Tail_Number" in info["columns"]

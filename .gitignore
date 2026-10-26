@@ -250,3 +250,7 @@ results/*
 # Local scratch / verification
 .verify/
 
+# Large OurAirports raw download is regenerable; keep only the small derived map.
+# To regenerate: see scripts/build_airport_timezones.py
+data/airport_timezones_raw.csv
+

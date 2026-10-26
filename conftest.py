@@ -13,3 +13,6 @@ if ROOT not in sys.path:
 FIXTURES = os.path.join(ROOT, "tests", "fixtures")
 SAMPLE_FLIGHTS = os.path.join(FIXTURES, "sample_flights.csv")
 SAMPLE_OLD_NAMES = os.path.join(FIXTURES, "sample_old_names.csv")
+DST_FLIGHTS = os.path.join(FIXTURES, "dst_flights.csv")
+# Default airport -> IANA timezone map shipped with the repo.
+AIRPORT_TZ_CSV = os.path.join(ROOT, "data", "airport_timezones.csv")
