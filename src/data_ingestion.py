@@ -42,8 +42,10 @@ __all__ = [
     "COLUMN_MAP",
     "ALIASES",
     "REQUIRED_FIELDS",
+    "ESSENTIAL_FIELDS",
     "load_raw",
     "validate_columns",
+    "require_columns",
     "basic_info",
     "save_sample",
     "find_raw_file",
@@ -249,6 +251,28 @@ def validate_columns(df: pd.DataFrame) -> dict[str, list[str]]:
     known = set(COLUMN_MAP) | set(ALIASES)
     unexpected = sorted(c for c in have if c not in known)
     return {"present": present, "missing": missing, "unexpected": unexpected}
+
+
+# Columns the cleaning step cannot do without. These are checked AFTER column
+# standardization (i.e. against the standardized snake_case names). If any are
+# missing, ``require_columns`` raises a clear error instead of producing a
+# silently-broken dataset. Tail numbers and actual times are NOT essential for
+# the pipeline to run; their absence is flagged per record instead.
+ESSENTIAL_FIELDS = ["flight_date", "origin", "dest", "crs_dep_time"]
+
+
+def require_columns(columns, essential: list[str] = ESSENTIAL_FIELDS) -> None:
+    """Raise ``ValueError`` listing any essential (standardized) columns that are
+    absent from ``columns`` (a list/Series/Index of column names)."""
+    have = set(columns)
+    missing = [f for f in essential if f not in have]
+    if missing:
+        raise ValueError(
+            "Cleaning stopped: essential standardized columns are missing from "
+            f"the input: {', '.join(missing)}. These are required to reconstruct "
+            "comparable timestamps. Standardize column names first (see "
+            "src/data_ingestion.COLUMN_MAP) or check the raw file."
+        )
 
 
 def basic_info(df: pd.DataFrame, source: str = "") -> dict[str, Any]:
