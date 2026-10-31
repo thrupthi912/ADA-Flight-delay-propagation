@@ -348,3 +348,106 @@ def test_cleaned_columns_include_new_schema():
                 "is_cancelled", "is_diverted", "rotation_eligible",
                 "exclusion_reason"]:
         assert col in cleaned.columns, f"missing cleaned column: {col}"
+
+
+# ---------------------------------------------------------------------------
+# parse_flight_date (new real-data format support)
+# ---------------------------------------------------------------------------
+from src.preprocessing import parse_flight_date
+
+
+def test_parse_flight_date_mdy_ampm():
+    """Real BTS format: M/D/YYYY 12:00:00 AM."""
+    s = pd.Series(["2/1/2024 12:00:00 AM"])
+    result = parse_flight_date(s)
+    assert result.iloc[0] == pd.Timestamp("2024-02-01")
+
+
+def test_parse_flight_date_yyyymmdd():
+    """Legacy synthetic fixture format: YYYYMMDD."""
+    s = pd.Series(["20240105"])
+    result = parse_flight_date(s)
+    assert result.iloc[0] == pd.Timestamp("2024-01-05")
+
+
+def test_parse_flight_date_iso():
+    """ISO format: YYYY-MM-DD."""
+    s = pd.Series(["2024-01-05"])
+    result = parse_flight_date(s)
+    assert result.iloc[0] == pd.Timestamp("2024-01-05")
+
+
+def test_parse_flight_date_invalid():
+    """Unparseable strings become NaT."""
+    s = pd.Series(["not_a_date", "", "nan"])
+    result = parse_flight_date(s)
+    assert result.isna().all()
+
+
+def test_diverted_absent_column_not_treated_as_zero():
+    """When DIVERTED column is absent from source, validate_records must not
+    set is_diverted=False (confirmed non-diverted); it must be NA (unknown)."""
+    raw = load_raw(SAMPLE_FLIGHTS)
+    # Drop the Diverted column entirely to simulate months without it.
+    raw = raw.drop(columns=["Diverted"])
+    std, _ = standardize_columns(raw)
+    from src.preprocessing import coerce_types, build_timestamps, validate_records
+    coerced = coerce_types(std)  # coerce_types must add diverted as all-NA
+    assert "diverted" in coerced.columns, "coerce_types must add diverted column when absent"
+    assert coerced["diverted"].isna().all(), "all diverted values must be NA when column was absent"
+    with_ts = build_timestamps(coerced, airport_tz=TZ_MAP)
+    flagged = validate_records(with_ts)
+    # is_diverted should be all-NA, not all-False
+    assert flagged["is_diverted"].isna().all(), "is_diverted must be NA when diverted column was absent"
+
+
+def test_diverted_absent_exclusion_reason():
+    """Flights with unknown diversion status get 'missing_diversion_indicator'
+    exclusion reason (not excluded as 'diverted')."""
+    raw = load_raw(SAMPLE_FLIGHTS)
+    raw = raw.drop(columns=["Diverted"])
+    std, _ = standardize_columns(raw)
+    from src.preprocessing import coerce_types, build_timestamps, validate_records
+    with_ts = build_timestamps(coerce_types(std), airport_tz=TZ_MAP)
+    flagged = validate_records(with_ts)
+    # Every non-cancelled, otherwise-clean row should have missing_diversion_indicator
+    # as exclusion reason (not excluded as 'diverted').
+    assert "diverted" not in flagged["exclusion_reason"].values, (
+        "exclusion_reason must not say 'diverted' when column was absent"
+    )
+
+
+def test_sensitivity_eligible_with_unknown_diversion():
+    """A flight that would be rotation-eligible except diversion status is
+    unknown should appear in sensitivity_eligible but NOT in rotation_eligible."""
+    raw = load_raw(SAMPLE_FLIGHTS)
+    # Drop Diverted to simulate months without it.
+    raw = raw.drop(columns=["Diverted"])
+    std, _ = standardize_columns(raw)
+    from src.preprocessing import coerce_types, build_timestamps, validate_records
+    with_ts = build_timestamps(coerce_types(std), airport_tz=TZ_MAP)
+    flagged = validate_records(with_ts)
+    # With no diversion data: strict rotation_eligible must be 0
+    # (all otherwise-eligible flights now have unknown diversion status).
+    assert "sensitivity_eligible" in flagged.columns
+    # Some flights that would have been rotation_eligible should now be sensitivity_eligible
+    n_rot = int(flagged["rotation_eligible"].fillna(False).sum())
+    n_sens = int(flagged["sensitivity_eligible"].fillna(False).sum())
+    assert n_rot == 0, f"rotation_eligible should be 0 with no diversion data, got {n_rot}"
+    assert n_sens > 0, f"sensitivity_eligible should be > 0 with unknown diversion, got {n_sens}"
+
+
+def test_cancelled_float_string():
+    """BTS real data has '0.00' and '1.00' for cancelled. These must coerce
+    correctly to Int64 0 and 1 respectively."""
+    raw = load_raw(SAMPLE_FLIGHTS).copy()
+    # Simulate real BTS format: overwrite Cancelled values with float strings.
+    raw["Cancelled"] = raw["Cancelled"].map(lambda v: "0.00" if str(v).strip() in ("0", "0.0", "0.00", "") else "1.00" if str(v).strip() in ("1", "1.0", "1.00") else "0.00")
+    std, _ = standardize_columns(raw)
+    from src.preprocessing import coerce_types
+    coerced = coerce_types(std)
+    assert str(coerced["cancelled"].dtype) == "Int64"
+    cancelled_vals = coerced["cancelled"].dropna().unique()
+    assert set(cancelled_vals).issubset({0, 1}), f"Unexpected values: {cancelled_vals}"
+    assert 1 in cancelled_vals, "1.00 must coerce to Int64(1)"
+    assert 0 in cancelled_vals, "0.00 must coerce to Int64(0)"

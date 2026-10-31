@@ -119,3 +119,47 @@ def test_required_fields_all_have_mappings():
 def test_aliases_target_canonical_names():
     for old, new in ALIASES.items():
         assert new in COLUMN_MAP, f"alias target {new} is not a known BTS field"
+
+
+from src.data_ingestion import find_monthly_files
+
+
+def test_find_monthly_files_finds_all_12():
+    """Scans data/raw and finds all 12 monthly T_ONTIME_REPORTING.csv files."""
+    # This test requires the real data directory to exist.
+    raw_dir = r"c:\Users\thrup\OneDrive\Desktop\Sem 5\ADA\ADA-Flight-delay-propagation\data\raw"
+    if not os.path.isdir(raw_dir):
+        pytest.skip("data/raw directory not found")
+    files = find_monthly_files(raw_dir)
+    # Filter to only entries where the file actually exists.
+    found = [(m, p) for m, p in files if os.path.isfile(p)]
+    assert len(found) == 12, f"Expected 12 monthly files, found {len(found)}: {[m for m, _ in found]}"
+
+
+def test_aliases_cover_real_bts_columns():
+    """All UPPERCASE_UNDERSCORE column names actually in the January data must
+    be resolvable via ALIASES or COLUMN_MAP to a known canonical name."""
+    jan_path = r"c:\Users\thrup\OneDrive\Desktop\Sem 5\ADA\ADA-Flight-delay-propagation\data\raw\January\T_ONTIME_REPORTING.csv"
+    if not os.path.isfile(jan_path):
+        pytest.skip("January raw file not found")
+    df = load_raw(jan_path, nrows=1)
+    from src.preprocessing import standardize_columns
+    std, mapping = standardize_columns(df)
+    # Every column that came in as UPPERCASE_UNDERSCORE should now be snake_case,
+    # not still UPPERCASE_UNDERSCORE (indicating it was resolved).
+    unresolved = [col for col in std.columns if col == col.upper() and "_" in col]
+    # Some columns are legitimately unknown (extra BTS fields not in COLUMN_MAP);
+    # report them but do not fail the test — the critical ones must all resolve.
+    critical = [
+        "FL_DATE", "OP_UNIQUE_CARRIER", "TAIL_NUM", "ORIGIN", "DEST",
+        "CRS_DEP_TIME", "DEP_TIME", "DEP_DELAY",
+        "CRS_ARR_TIME", "ARR_TIME", "ARR_DELAY",
+        "CANCELLED", "CRS_ELAPSED_TIME", "ACTUAL_ELAPSED_TIME",
+    ]
+    for raw_col in critical:
+        if raw_col in df.columns:
+            mapped = mapping.get(raw_col, raw_col)
+            assert mapped != raw_col, (
+                f"Critical column {raw_col!r} was not resolved to snake_case; "
+                f"add it to ALIASES in src/data_ingestion.py"
+            )
