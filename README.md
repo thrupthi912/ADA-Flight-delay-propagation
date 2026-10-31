@@ -1,19 +1,18 @@
-# ADA-Flight-delay-propagation
+# ADA Flight Delay Propagation — Thrupthi G D's Data Pipeline
 
 **Quantifying Aircraft-Rotation Delay Propagation Under Operational and Environmental Confounding**
 
-An ADA course project that reconstructs aircraft rotations from the BTS
-On-Time Performance dataset and estimates the association between an inbound
-flight's arrival delay and the departure delay of the next flight operated by
-the same aircraft, while accounting for turnaround time, weather, congestion,
-and other operational factors.
+An ADA course project that reconstructs aircraft rotations from the BTS On-Time Performance
+dataset and estimates the association between an inbound flight's arrival delay and the
+departure delay of the next flight operated by the same aircraft, while accounting for
+turnaround time, weather, congestion, and other operational factors.
 
 ---
 
 ## Team and responsibility split
 
 | Member | Responsibility |
-|---|---|
+|--------|----------------|
 | **Thrupthi G D** | Repository, BTS ingestion, initial cleaning, data dictionary, data-quality report, preprocessing tests |
 | Amulya | Aircraft rotation and turnaround analysis (consecutive-flight linking, pair dataset, ground-time/slack/buffer, validation, descriptives) |
 | Anagha Kaushik | Statistical modelling and recovery analysis (baseline/adjusted models, CIs, persistence/recovery, robustness, plots) |
@@ -25,31 +24,52 @@ modules (`src/aircraft_rotations.py`, `src/external_features.py`,
 
 ---
 
-## Repository structure
+## Dataset source
 
-```text
-ada-flight-delay-propagation/
+U.S. Bureau of Transportation Statistics (BTS), "Reporting Carrier On-Time Performance (1987-present)",
+2024 monthly downloads from <https://www.transtats.bts.gov/>
+
+12 monthly raw files, one per calendar month of 2024.
+
+---
+
+## Directory structure
+
+```
+ADA-Flight-delay-propagation/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
-├── conftest.py                 # makes `import src.*` work for tests
+├── conftest.py
 ├── data/
-│   ├── raw/                    # <- place downloaded BTS CSVs here (gitignored)
-│   ├── processed/              # cleaned outputs (gitignored; mapping tracked)
-│   └── sample/                 # small raw samples for quick review
+│   ├── raw/
+│   │   └── <Month>/T_ONTIME_REPORTING.csv   # 12 monthly BTS files (gitignored)
+│   ├── airport_timezones.csv               # 2036 US airports with IANA timezones
+│   └── processed/
+│       ├── flights_clean.csv                 # all 12 months combined, cleaned
+│       ├── flights_rotation_eligible.csv     # strict rotation cohort
+│       ├── flights_sensitivity_eligible.csv  # sensitivity cohort (unknown diversion)
+│       ├── duplicate_records.csv
+│       ├── column_mapping.json
+│       └── monthly/
+│           ├── <Month>_clean.csv             # per-month cleaned
+│           └── <Month>_rotation_eligible.csv
+├── reports/
+│   ├── data_quality_report.md
+│   └── data_quality_summary.json
 ├── src/
-│   ├── data_ingestion.py       # load + validate raw BTS CSV        (Thrupthi)
-│   ├── preprocessing.py         # clean, validate, flag, report        (Thrupthi)
-│   └── (aircraft_rotations.py, external_features.py, modelling.py,
-│        network_analysis.py — owned by teammates)
+│   ├── data_ingestion.py     # load and validate raw BTS CSVs
+│   ├── preprocessing.py      # clean, standardize, timestamp reconstruction
+│   └── airport_timezones.py  # airport IANA timezone lookup
+├── scripts/
+│   ├── run_pipeline.py       # full 12-month pipeline
+│   └── __init__.py
 ├── tests/
-│   ├── fixtures/               # small synthetic BTS-schema test data
 │   ├── test_data_ingestion.py
-│   └── test_preprocessing.py
-├── docs/
-│   └── data_dictionary.md
-├── notebooks/
-└── results/                    # data-quality report goes here
+│   ├── test_preprocessing.py
+│   └── fixtures/
+└── docs/
+    └── data_dictionary.md
 ```
 
 ---
@@ -57,102 +77,94 @@ ada-flight-delay-propagation/
 ## Setup
 
 ```bash
-# 1. Create and activate a virtual environment (optional but recommended)
-python -m venv .venv
-.venv\Scripts\activate        # Windows
-# source .venv/bin/activate    # macOS/Linux
-
-# 2. Install dependencies
 pip install -r requirements.txt
 ```
 
-Tested with Python 3.15, pandas 3.1, pytest 9.1. Any modern Python 3.10+ with
-pandas >= 2.0 should work.
+Tested with Python 3.15, pandas 3.1, pytest 9.1. Any modern Python 3.10+ with pandas >= 2.0 should work.
 
 ---
 
-## Data placement
-
-Download the BTS "Reporting Carrier On-Time Performance" data:
-
-> <https://www.transtats.bts.gov/TableInfo.asp?QO_fu146_anzr=b0-gvzr&gnoyr_VQ=FGJ>
-
-Select a month (or a full year for the final study period), choose "Download"
-and save the CSV into `data/raw/`, for example `data/raw/ONTIME_2024-01.csv`.
-**Do not commit raw data to Git** — it is gitignored because the files are large.
-
-The pipeline reads the first CSV it finds in `data/raw/`, or a path you pass
-explicitly. It is strongly recommended to start with **one month** to confirm
-everything runs before processing the full year.
-
----
-
-## Commands
-
-All commands are run from the repository root.
+## How to run the full pipeline
 
 ```bash
-# 1. Load + validate raw data and write a small raw sample for review
-python -m src.data_ingestion data/raw/ONTIME_2024-01.csv \
-    --sample-out data/sample/raw_sample.csv --sample-n 1000
+python -m scripts.run_pipeline
+```
 
-# (if no path is given, it auto-detects the first CSV in data/raw/)
-python -m src.data_ingestion --nrows 50000   # read only first 50k rows
+Processes all 12 months in `data/raw/` and writes cleaned outputs to `data/processed/`
+and reports to `reports/`.
 
-# 2. Clean the data and generate the quality report
-python -m src.preprocessing data/raw/ONTIME_2024-01.csv
-# outputs:
-#   data/processed/flights_clean.csv
-#   data/processed/flights_rotation_eligible.csv
-#   data/processed/duplicate_records.csv
-#   data/processed/column_mapping.json
-#   results/data_quality_report.md
-#   results/data_quality_summary.json
+---
 
-# 3. Run the test suite
+## How to run a single month (for debugging)
+
+```bash
+python -m src.data_ingestion data/raw/January/T_ONTIME_REPORTING.csv
+```
+
+---
+
+## How to run tests
+
+```bash
 python -m pytest tests/ -v
 ```
 
 ---
 
-## What the cleaning step does (Thrupthi's contribution)
+## Key limitations
 
-1. **Standardize column names** to snake_case without losing meaning; the
-   original -> standardized mapping is written to `column_mapping.json`. Older
-   BTS column names are handled automatically.
-2. **Coerce types** explicitly (delays/elapsed/distance -> numeric, indicators ->
-   0/1, flight_date -> datetime).
-3. **Reconstruct consistent LOCAL timestamps** from the scheduled departure plus
-   BTS's pre-computed minute deltas — this avoids the classic midnight-crossing
-   error of subtracting local clock strings directly. All datetimes are local and
-   timezone-naive; UTC normalization for cross-airport comparison is the rotation
-   module's job.
-4. **Validate and flag** tail numbers, timestamps, cancellation/diversion
-   indicators, delay fields, and implausible values. Records are flagged, not
-   silently deleted.
-5. **Remove exact duplicate rows** (the one justified exclusion) and log them.
-6. **Write a reproducible data-quality report** to `results/`.
-
-See `docs/data_dictionary.md` for the full field list, units, missing-value
-conventions, and validation rules.
+- **DIVERTED absent from 8 of 12 months**: February, March, April, May, September, October,
+  November, and December do not include the DIVERTED column in the BTS download. Flights
+  from those months cannot be confirmed non-diverted and therefore appear only in the
+  sensitivity cohort, not the strict rotation-eligible cohort.
+- **All BTS times are local clock times**: UTC conversion requires the airport timezone lookup
+  (`data/airport_timezones.csv`). Airports not in the map produce local-only timestamps,
+  flagged as `tz_origin_known=False`.
+- **DISTANCE absent from January**: Distance-based analysis requires special handling for January.
+- **WHEELS_OFF/ON available in January only**: Ground time analysis via wheels timestamps is
+  limited to January.
+- **This is an observational study**: No causal claims about delay propagation are supported
+  by the data alone.
 
 ---
 
-## Key assumptions and limitations
+## Schema variations by month
 
-- Times are local airport time (hhmm). Datetimes in the cleaned file are
-  timezone-naive local.
-- Delays and elapsed times are in minutes; distance in miles.
-- `ActualElapsedTime` and `ArrDelay` are NULL for diverted flights (per BTS).
-- Delay-cause fields exist only from June 2003 and are self-reported/incomplete.
-- Results describe **adjusted associations**, not definitive causation.
+| Month | DIVERTED | WHEELS_OFF/ON | DISTANCE |
+|-------|----------|---------------|----------|
+| January | Yes | Yes | No |
+| February | No | No | Yes |
+| March | No | No | Yes |
+| April | No | No | Yes |
+| May | No | No | Yes |
+| June | Yes | No | Yes |
+| July | Yes | No | Yes |
+| August | Yes | No | Yes |
+| September | No | No | Yes |
+| October | No | No | Yes |
+| November | No | No | Yes |
+| December | No | No | Yes |
+
+---
+
+## What the cleaning step does
+
+1. **Standardize column names** to snake_case; the original → standardized mapping is written to `column_mapping.json`.
+2. **Coerce types** explicitly (delays/elapsed/distance → numeric, indicators → 0/1, flight_date → datetime).
+3. **Reconstruct UTC timestamps** by interpreting scheduled departure clock times in the origin airport's timezone
+   and converting to UTC. Arrival UTC is derived from UTC departure + actual elapsed time.
+4. **Validate and flag** tail numbers, timestamps, cancellation/diversion indicators, delay fields, and
+   implausible values. Records are flagged, not silently deleted.
+5. **Separate rotation cohorts**: strict cohort (confirmed non-diverted) vs sensitivity cohort (unknown diversion status).
+6. **Remove exact duplicate rows** and log them.
+7. **Write a reproducible data-quality report** to `reports/`.
+
+See `docs/data_dictionary.md` for the full field list, units, missing-value conventions, and validation rules.
 
 ---
 
 ## Reproducibility
 
-The cleaning pipeline is deterministic for a given input file: running
-`src/preprocessing.py` on the same raw CSV always produces the same cleaned
-dataset and the same `data_quality_summary.json`. The synthetic test fixtures in
-`tests/fixtures/` are clearly labelled test data, not real BTS data, and let
-the tests run without the full dataset.
+The cleaning pipeline is deterministic for a given input file: running `scripts/run_pipeline.py`
+on the same raw CSVs always produces the same cleaned dataset and the same `reports/data_quality_summary.json`.
+The synthetic test fixtures in `tests/fixtures/` let the tests run without the full dataset.
