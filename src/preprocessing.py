@@ -76,6 +76,7 @@ from src.data_ingestion import (
 )
 
 __all__ = [
+    "parse_flight_date",
     "parse_hhmm",
     "standardize_columns",
     "coerce_types",
@@ -119,6 +120,36 @@ MAX_TAIL_LEN = 6              # N-numbers are at most 6 characters
 DEP_TIME_TOL = 1
 ARR_TIME_TOL = 1
 ARRIVAL_ELAPSED_TOL = 3
+
+
+def parse_flight_date(series: pd.Series) -> pd.Series:
+    """Parse BTS FL_DATE which can be any of:
+    - M/D/YYYY 12:00:00 AM  (e.g. "2/1/2024 12:00:00 AM")  <- real data format
+    - YYYYMMDD              (e.g. "20240201")              <- synthetic fixtures
+    - YYYY-MM-DD            (e.g. "2024-02-01")
+    - MM/DD/YYYY            (e.g. "02/01/2024")
+    Returns a datetime64[ns] Series; unparseable values become NaT.
+    """
+    s = series.astype(str).str.strip()
+    result = pd.Series(pd.NaT, index=series.index, dtype="datetime64[ns]")
+
+    # YYYYMMDD (synthetic test fixtures, old BTS format)
+    m = s.str.match(r"^\d{8}$")
+    if m.any():
+        result.update(pd.to_datetime(s[m], format="%Y%m%d", errors="coerce"))
+
+    # YYYY-MM-DD
+    m2 = s.str.match(r"^\d{4}-\d{2}-\d{2}$") & result.isna()
+    if m2.any():
+        result.update(pd.to_datetime(s[m2], format="%Y-%m-%d", errors="coerce"))
+
+    # M/D/YYYY or MM/DD/YYYY with or without time component (real BTS format)
+    # Use format="mixed" with dayfirst=False for cross-platform compatibility
+    m3 = s.str.match(r"^\d{1,2}/\d{1,2}/\d{4}") & result.isna()
+    if m3.any():
+        result.update(pd.to_datetime(s[m3], format="mixed", dayfirst=False, errors="coerce"))
+
+    return result
 
 
 def parse_hhmm(value: Any) -> float:
@@ -245,8 +276,7 @@ def coerce_types(df: pd.DataFrame) -> pd.DataFrame:
     out = df.copy()
 
     if "flight_date" in out.columns:
-        raw = out["flight_date"].astype(str).str.replace("-", "", regex=False)
-        out["flight_date"] = pd.to_datetime(raw, format="%Y%m%d", errors="coerce")
+        out["flight_date"] = parse_flight_date(out["flight_date"])
 
     for col in NUMERIC_FIELDS:
         if col in out.columns:
@@ -255,6 +285,11 @@ def coerce_types(df: pd.DataFrame) -> pd.DataFrame:
     for col in INDICATOR_FIELDS:
         if col in out.columns:
             out[col] = pd.to_numeric(out[col], errors="coerce").astype("Int64")
+
+    # When DIVERTED / diverted is absent from the source file, add it as all-NA
+    # (Int64) rather than treating those flights as confirmed non-diverted.
+    if "diverted" not in out.columns:
+        out["diverted"] = pd.array([pd.NA] * len(out), dtype="Int64")
 
     for col in ["tail_number", "reporting_airline", "iata_code_reporting_airline",
                "origin", "dest", "cancellation_code", "origin_state",
@@ -455,6 +490,27 @@ def validate_records(df: pd.DataFrame) -> pd.DataFrame:
         & ~out["implausible_record"].fillna(False)
     ).fillna(False)
 
+    # sensitivity_eligible: flights that are rotation-eligible OR would be
+    # rotation-eligible except that diversion status is unknown (NA).
+    # These are labeled explicitly as unknown-diversion cases and kept
+    # separate from the strict rotation_eligible cohort.
+    out["sensitivity_eligible"] = (
+        out["rotation_eligible"]
+        | (
+            out["valid_tail_number"].fillna(False)
+            & out["valid_crs_dep_time"].fillna(False)
+            & out.get("has_utc_timestamps", pd.Series(False, index=out.index)).fillna(False)
+            & out["valid_arr_time"].fillna(False)
+            & out["is_cancelled"].eq(False).fillna(False)
+            & out["is_diverted"].isna()  # diversion status UNKNOWN, not confirmed diverted
+            & ~out["dep_time_inconsistent"].fillna(False)
+            & ~out["arr_time_inconsistent"].fillna(False)
+            & ~out["arrival_elapsed_inconsistent"].fillna(False)
+            & (out.get("dep_dst_status", pd.Series("ok", index=out.index)) == "ok")
+            & ~out["implausible_record"].fillna(False)
+        )
+    ).fillna(False)
+
     # Human-readable exclusion reason (first failing gate wins).
     def _reason(row: pd.Series) -> str:
         c = row.get("is_cancelled")
@@ -568,6 +624,8 @@ def clean(df: pd.DataFrame, airport_tz: dict | None = None):
         "n_arrival_elapsed_inconsistent": _count_true(cleaned.get("arrival_elapsed_inconsistent")),
         "n_dst_transition": int(cleaned["dep_dst_status"].isin(["ambiguous", "nonexistent"]).sum()) if "dep_dst_status" in cleaned else 0,
         "n_implausible": _count_true(cleaned.get("implausible_record")),
+        "n_diversion_status_unknown": int(cleaned["diverted"].isna().sum()) if "diverted" in cleaned else 0,
+        "n_sensitivity_eligible": int(cleaned["sensitivity_eligible"].fillna(False).sum()) if "sensitivity_eligible" in cleaned else 0,
     }
     cleaned.attrs["cleaning_summary"] = summary
     cleaned.attrs["column_mapping"] = mapping
