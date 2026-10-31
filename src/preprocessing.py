@@ -255,10 +255,19 @@ def standardize_columns(df: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, str]]
 
     Returns the renamed dataframe and the {original: standardized} mapping
     actually applied (for traceability). Unknown columns are kept untouched.
+
+    When two raw columns resolve to the same standardized name (e.g.
+    ``OP_UNIQUE_CARRIER`` and ``OP_CARRIER`` both map to
+    ``reporting_airline``), the first occurrence is kept and subsequent
+    duplicates are dropped. This prevents pandas from creating duplicate
+    column names, which would make column access return a DataFrame instead
+    of a Series.
     """
     mapping = {col: _resolve_name(col) for col in df.columns}
     out = df.copy()
     out.columns = [mapping[c] for c in df.columns]
+    # Drop duplicate column names introduced by alias resolution, keeping first.
+    out = out.loc[:, ~out.columns.duplicated(keep="first")]
     return out, mapping
 
 
