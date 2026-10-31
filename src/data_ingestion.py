@@ -49,6 +49,7 @@ __all__ = [
     "basic_info",
     "save_sample",
     "find_raw_file",
+    "find_monthly_files",
     "main",
 ]
 
@@ -172,6 +173,55 @@ ALIASES: dict[str, str] = {
     "UniqueCarrier": "Reporting_Airline",
     "TailNum": "Tail_Number",
     "FlightNum": "Flight_Number_Reporting_Airline",
+
+    "FL_DATE": "FlightDate",
+    "OP_UNIQUE_CARRIER": "Reporting_Airline",
+    "TAIL_NUM": "Tail_Number",
+    "OP_CARRIER_FL_NUM": "Flight_Number_Reporting_Airline",
+    "ORIGIN": "Origin",
+    "DEST": "Dest",
+    "CRS_DEP_TIME": "CRSDepTime",
+    "DEP_TIME": "DepTime",
+    "CRS_ARR_TIME": "CRSArrTime",
+    "ARR_TIME": "ArrTime",
+    "DEP_DELAY": "DepDelay",
+    "ARR_DELAY": "ArrDelay",
+    "CANCELLED": "Cancelled",
+    "DIVERTED": "Diverted",
+    "CANCELLATION_CODE": "CancellationCode",
+    "CRS_ELAPSED_TIME": "CRSElapsedTime",
+    "ACTUAL_ELAPSED_TIME": "ActualElapsedTime",
+    "DISTANCE": "Distance",
+    "TAXI_OUT": "TaxiOut",
+    "TAXI_IN": "TaxiIn",
+    "AIR_TIME": "AirTime",
+    "CARRIER_DELAY": "CarrierDelay",
+    "WEATHER_DELAY": "WeatherDelay",
+    "NAS_DELAY": "NASDelay",
+    "SECURITY_DELAY": "SecurityDelay",
+    "LATE_AIRCRAFT_DELAY": "LateAircraftDelay",
+    # Additional BTS uppercase header aliases
+    "YEAR": "Year", "QUARTER": "Quarter", "MONTH": "Month",
+    "DAY_OF_MONTH": "DayofMonth", "DAY_OF_WEEK": "DayOfWeek",
+    "OP_CARRIER_AIRLINE_ID": "DOT_ID_Reporting_Airline",
+    "OP_CARRIER": "Reporting_Airline",
+    "ORIGIN_AIRPORT_ID": "OriginAirportID", "ORIGIN_AIRPORT_SEQ_ID": "OriginAirportSeqID",
+    "ORIGIN_CITY_MARKET_ID": "OriginCityMarketID",
+    "ORIGIN_CITY_NAME": "OriginCityName", "ORIGIN_STATE_ABR": "OriginState",
+    "ORIGIN_STATE_FIPS": "OriginStateFips", "ORIGIN_STATE_NM": "OriginStateName",
+    "ORIGIN_WAC": "OriginWac",
+    "DEST_AIRPORT_ID": "DestAirportID", "DEST_AIRPORT_SEQ_ID": "DestAirportSeqID",
+    "DEST_CITY_MARKET_ID": "DestCityMarketID", "DEST_CITY_NAME": "DestCityName",
+    "DEST_STATE_ABR": "DestState", "DEST_STATE_FIPS": "DestStateFips",
+    "DEST_STATE_NM": "DestStateName", "DEST_WAC": "DestWac",
+    "DEP_DELAY_NEW": "DepDelayMinutes", "DEP_DEL15": "DepDel15",
+    "DEP_DELAY_GROUP": "DepartureDelayGroups", "DEP_TIME_BLK": "DepTimeBlk",
+    "ARR_DELAY_NEW": "ArrDelayMinutes", "ARR_DEL15": "ArrDel15",
+    "ARR_DELAY_GROUP": "ArrivalDelayGroups", "ARR_TIME_BLK": "ArrTimeBlk",
+    "WHEELS_OFF": "WheelsOff", "WHEELS_ON": "WheelsOn",
+    "FLIGHTS": "Flights", "DISTANCE_GROUP": "DistanceGroup",
+    "FIRST_DEP_TIME": "FirstDepTime", "TOTAL_ADD_GTIME": "TotalAddGTime",
+    "LONGEST_ADD_GTIME": "LongestAddGTime",
 }
 
 # Minimal set of standardized fields needed for the cleaning step to be
@@ -180,8 +230,11 @@ REQUIRED_FIELDS: list[str] = [
     "flight_date", "tail_number", "origin", "dest",
     "crs_dep_time", "dep_time", "dep_delay",
     "crs_arr_time", "arr_time", "arr_delay",
-    "cancelled", "diverted",
-    "crs_elapsed_time", "actual_elapsed_time", "distance",
+    "cancelled", "crs_elapsed_time", "actual_elapsed_time",
+]
+
+OPTIONAL_FIELDS: list[str] = [
+    "diverted", "distance", "wheels_off", "wheels_on",
 ]
 
 
@@ -224,6 +277,26 @@ def find_raw_file(raw_dir: str = "data/raw") -> str | None:
         if name.lower().endswith((".csv",)) and not name.startswith("."):
             return os.path.join(raw_dir, name)
     return None
+
+
+def find_monthly_files(raw_dir: str = "data/raw") -> list[tuple[str, str]]:
+    """Return a sorted list of (month_name, csv_path) tuples by scanning
+    subdirectories of raw_dir for files named T_ONTIME_REPORTING.csv.
+
+    Returns an empty list if raw_dir does not exist or contains no matching
+    files. Sorted alphabetically by subdirectory name.
+    """
+    results = []
+    if not os.path.isdir(raw_dir):
+        return results
+    for entry in sorted(os.listdir(raw_dir)):
+        subdir = os.path.join(raw_dir, entry)
+        if not os.path.isdir(subdir):
+            continue
+        candidate = os.path.join(subdir, "T_ONTIME_REPORTING.csv")
+        if os.path.isfile(candidate):
+            results.append((entry, candidate))
+    return results
 
 
 # ---------------------------------------------------------------------------
