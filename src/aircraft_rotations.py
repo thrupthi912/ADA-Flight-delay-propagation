@@ -310,7 +310,14 @@ def main() -> None:
             "Run preprocessing first or specify --input."
         )
 
-    flights = pd.read_csv(input_path)
+    # Row IDs are positions in the file, so only columns are restricted.
+    # Loading just the required columns keeps memory low on full-year data;
+    # missing ones are reported by build_rotation_pairs.
+    available = pd.read_csv(input_path, nrows=0).columns
+    flights = pd.read_csv(
+        input_path,
+        usecols=[column for column in REQUIRED_COLUMNS if column in available],
+    )
     pairs = build_rotation_pairs(flights)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)

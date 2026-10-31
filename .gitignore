@@ -254,3 +254,5 @@ results/*
 # To regenerate: see scripts/build_airport_timezones.py
 data/airport_timezones_raw.csv
 
+.DS_Store
+.DS_Store

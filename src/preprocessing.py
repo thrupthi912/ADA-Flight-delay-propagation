@@ -402,6 +402,19 @@ def validate_records(df: pd.DataFrame) -> pd.DataFrame:
     else:
         out["is_diverted"] = pd.Series(pd.NA, index=out.index, dtype="boolean")
 
+    # Conservative, auditable proxy for missing diversion flags. This does NOT
+    # prove diverted=0: require a known destination timezone and consistent,
+    # present arrival clock, arrival delay, and elapsed-time-derived arrival.
+    out["diversion_status_inferred_from_arrival"] = (
+        out["is_diverted"].isna()
+        & out.get("tz_dest_known", pd.Series(False, index=out.index)).fillna(False)
+        & out.get("arr_dt_utc", pd.Series(pd.NaT, index=out.index)).notna()
+        & out.get("arr_time", pd.Series(pd.NA, index=out.index)).notna()
+        & out.get("arr_delay", pd.Series(float("nan"), index=out.index)).notna()
+        & ~out.get("arr_time_inconsistent", pd.Series(False, index=out.index)).fillna(False)
+        & ~out.get("arrival_elapsed_inconsistent", pd.Series(False, index=out.index)).fillna(False)
+    ).fillna(False)
+
     # Tail number presence + plausibility (alphanumeric, 1-6 chars).
     if "tail_number" in out:
         tail = out["tail_number"].astype("string")
@@ -447,7 +460,10 @@ def validate_records(df: pd.DataFrame) -> pd.DataFrame:
         & out.get("has_utc_timestamps", pd.Series(False, index=out.index)).fillna(False)
         & out["valid_arr_time"].fillna(False)
         & out["is_cancelled"].eq(False).fillna(False)
-        & out["is_diverted"].eq(False).fillna(False)
+        & (
+            out["is_diverted"].eq(False).fillna(False)
+            | out["diversion_status_inferred_from_arrival"]
+        )
         & ~out["dep_time_inconsistent"].fillna(False)
         & ~out["arr_time_inconsistent"].fillna(False)
         & ~out["arrival_elapsed_inconsistent"].fillna(False)
@@ -463,6 +479,12 @@ def validate_records(df: pd.DataFrame) -> pd.DataFrame:
         d = row.get("is_diverted")
         if pd.notna(d) and bool(d):
             return "diverted"
+        if (
+            "diverted" in row.index
+            and pd.isna(row.get("diverted"))
+            and not bool(row.get("diversion_status_inferred_from_arrival", False))
+        ):
+            return "missing_diversion_indicator"
         if "cancelled" in row.index and pd.isna(row.get("cancelled")):
             return "missing_cancellation_indicator"
         if "diverted" in row.index and pd.isna(row.get("diverted")):
@@ -559,6 +581,7 @@ def clean(df: pd.DataFrame, airport_tz: dict | None = None):
         "n_diverted": _count_true(cleaned.get("is_diverted")),
         "n_missing_cancellation_indicator": int(cleaned["cancelled"].isna().sum()) if "cancelled" in cleaned else 0,
         "n_missing_diversion_indicator": int(cleaned["diverted"].isna().sum()) if "diverted" in cleaned else 0,
+        "n_diversion_status_inferred_from_arrival": int(cleaned["diversion_status_inferred_from_arrival"].sum()) if "diversion_status_inferred_from_arrival" in cleaned else 0,
         "n_missing_tail": int((~cleaned["valid_tail_number"].fillna(False)).sum()) if "valid_tail_number" in cleaned else 0,
         "n_invalid_timestamp": int(cleaned["invalid_timestamp"].sum()) if "invalid_timestamp" in cleaned else 0,
         "n_missing_origin_timezone": int((~cleaned["tz_origin_known"].fillna(False)).sum()) if "tz_origin_known" in cleaned else 0,
@@ -631,6 +654,7 @@ def generate_quality_report(raw_df, cleaned, summary, out_md, out_json, source="
              f"- Diverted: {summary['n_diverted']:,}",
              f"- Missing cancellation indicator: {summary['n_missing_cancellation_indicator']:,}",
              f"- Missing diversion indicator: {summary['n_missing_diversion_indicator']:,}",
+             f"- Missing diversion indicator accepted only after arrival consistency checks: {summary.get('n_diversion_status_inferred_from_arrival', 0):,}",
              f"- Missing/invalid tail number: {summary['n_missing_tail']:,}",
              f"- Invalid scheduled departure time: {summary['n_invalid_timestamp']:,}",
              f"- Missing origin timezone: {summary['n_missing_origin_timezone']:,}",
