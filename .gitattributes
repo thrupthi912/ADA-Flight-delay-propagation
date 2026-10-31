@@ -1,3 +1,2 @@
-data/processed/flights_clean.csv filter=lfs diff=lfs merge=lfs -text
 data/processed/flights_rotation_eligible.csv filter=lfs diff=lfs merge=lfs -text
 data/processed/duplicate_records.csv filter=lfs diff=lfs merge=lfs -text

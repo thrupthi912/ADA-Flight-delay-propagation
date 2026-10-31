@@ -254,3 +254,9 @@ results/*
 # To regenerate: see scripts/build_airport_timezones.py
 data/airport_timezones_raw.csv
 
+
+# Oversized processed datasets — share via OneDrive, not Git.
+# flights_rotation_eligible.csv (1.3 GB) stays in LFS; the rest are too large.
+data/processed/flights_clean.csv
+data/processed/flights_sensitivity_eligible.csv
+data/processed/monthly/
