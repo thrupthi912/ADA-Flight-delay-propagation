@@ -256,3 +256,10 @@ data/airport_timezones_raw.csv
 
 .DS_Store
 .DS_Store
+
+# NOAA weather downloads and generated weather observations
+data/weather/
+data/processed/weather_observations_2024.csv
+
+# Generated model predictions
+results/*/predictions.csv

@@ -1,0 +1,340 @@
+iata_code,airport_name,station_id,station_name,distance_km,match_method
+ABE,Lehigh Valley International Airport,USW00014737,ALLENTOWN LEHIGH VLY INTL AP,0.48,Exact ICAO
+ABI,Abilene Regional Airport,USW00013962,ABILENE RGNL AP,0.08,Exact ICAO
+ABQ,Albuquerque International Sunport,USW00023050,ALBUQUERQUE INTL AP,0.64,Exact ICAO
+ABR,Aberdeen Regional Airport,USW00014929,ABERDEEN,1.0,Exact ICAO
+ABY,Southwest Georgia Regional Airport,USW00013869,ALBANY SW GEORGIA RGNL AP,0.39,Exact ICAO
+ACK,Nantucket Memorial Airport,USW00014756,NANTUCKET MEM AP,0.16,Exact ICAO
+ACT,Waco Regional Airport,USW00013959,WACO RGNL AP,0.78,Exact ICAO
+ACV,California Redwood Coast-Humboldt County Airport,USW00024283,ARCATA EUREKA AP,0.36,Exact ICAO
+ACY,Atlantic City International Airport,USW00093730,ATLANTIC CITY INTL AP,1.03,Exact ICAO
+AEX,Alexandria International Airport,USW00093915,ALEXANDRIA INTL AP,1.5,Exact ICAO
+AGS,Augusta Regional At Bush Field,USW00003820,AUGUSTA BUSH FLD AP,0.52,Exact ICAO
+ALB,Albany International Airport,USW00014735,ALBANY INTL AP,0.24,Exact ICAO
+ALW,Walla Walla Regional Airport,USW00024160,WALLA WALLA RGNL AP,0.18,Exact ICAO
+AMA,Rick Husband Amarillo International Airport,USW00023047,AMARILLO,1.74,Exact ICAO
+APN,Alpena County Regional Airport,USW00094849,ALPENA CO RGNL AP,0.78,Exact ICAO
+ASE,Aspen-Pitkin County Airport (Sardy Field),USW00093073,ASPEN PITKIN CO AP SARDY FLD,0.77,Exact ICAO
+ATL,Hartsfield Jackson Atlanta International Airport,USW00013874,ATLANTA HARTSFIELD-JACKSON INT,1.52,Exact ICAO
+ATW,Appleton International Airport,USW00004825,APPLETON OUTAGAMIE AP,0.93,Exact ICAO
+AUS,Austin Bergstrom International Airport,USW00013904,AUSTIN BERGSTROM INTL AP,2.36,Exact ICAO
+AVL,Asheville Regional Airport,USW00003812,ASHEVILLE AP,0.56,Exact ICAO
+AVP,Wilkes-Barre/Scranton International Airport,USW00014777,WILKES-BARRE/SCRANTON INTL AP,0.4,Exact ICAO
+AZO,Kalamazoo/Battle Creek International Airport,USW00094815,KALAMAZOO BATTLE CREEK INTL AP,0.51,Exact ICAO
+BDL,Bradley International Airport,USW00014740,HARTFORD-BRADLEY INTL AP,0.52,Exact ICAO
+BFF,Western Neb. Rgnl/William B. Heilig Airport,USW00024028,SCOTTSBLUFF W B HEILIG FLD AP,0.43,Exact ICAO
+BFL,Meadows Field,USW00023155,BAKERSFIELD AP,0.17,Exact ICAO
+BGM,Greater Binghamton/Edwin A Link field,USW00004725,BINGHAMTON,1.08,Exact ICAO
+BGR,Bangor International Airport,USW00014606,BANGOR INTL AP,1.15,Exact ICAO
+BHM,Birmingham-Shuttlesworth International Airport,USW00013876,BIRMINGHAM AP,0.61,Exact ICAO
+BIH,Eastern Sierra Regional Airport,USW00023157,BISHOP AP,0.5,Exact ICAO
+BIL,Billings Logan International Airport,USW00024033,BILLINGS INTL AP,0.42,Exact ICAO
+BIS,Bismarck Municipal Airport,USW00024011,BISMARCK,1.07,Exact ICAO
+BJI,Bemidji Regional Airport,USW00014958,BEMIDJI MUNI AP,1.05,Exact ICAO
+BLI,Bellingham International Airport,USW00024217,BELLINGHAM INTL AP,0.74,Exact ICAO
+BLV,Scott AFB/Midamerica Airport,USW00013802,BELLEVILLE SCOTT AFB,1.39,Exact ICAO
+BMI,Central Illinois Regional Airport at Bloomington-Normal,USW00054831,BLOOMINGTON NORMAL AP,2.97,Exact ICAO
+BNA,Nashville International Airport,USW00013897,NASHVILLE INTL AP,1.78,Exact ICAO
+BOI,Boise Air Terminal/Gowen Field,USW00024131,BOISE AIR TERMINAL,1.45,Exact ICAO
+BOS,Boston Logan International Airport,USW00014739,BOSTON,0.21,Exact ICAO
+BPT,Jack Brooks Regional Airport,USW00012917,PORT ARTHUR SE TX RGNL AP,0.53,Exact ICAO
+BQK,Brunswick Golden Isles Airport,USW00053883,BRUNSWICK GLYNCO AP,0.04,Exact ICAO
+BRD,Brainerd Lakes Regional Airport,USW00094938,BRAINERD CROW WING CO AP,0.22,Exact ICAO
+BRO,Brownsville South Padre Island International Airport,USI0000KBRO,BROWNSVILLE SOUTH PADRE ISLAND,0.08,Exact ICAO
+BTM,Bert Mooney Airport,USW00024135,BUTTE BERT MOONEY AP,1.12,Exact ICAO
+BTR,Baton Rouge Metropolitan Airport,USW00013970,BATON ROUGE METRO AP,0.57,Exact ICAO
+BTV,Patrick Leahy Burlington International Airport,USW00014742,BURLINGTON INTL AP,0.48,Exact ICAO
+BUF,Buffalo Niagara International Airport,USW00014733,BUFFALO,1.0,Exact ICAO
+BUR,Hollywood Burbank/Bob Hope Airport,USW00023152,BURBANK GLENDALE PASADENA AP,0.78,Exact ICAO
+BWI,Baltimore/Washington International Thurgood Marshall Airport,USW00093721,BALTIMORE-WASHINGTON INTL AP,1.39,Exact ICAO
+BZN,Bozeman Yellowstone International Airport,USW00024132,BOZEMAN GALLATIN FLD AP,1.13,Exact ICAO
+CAE,Columbia Metropolitan Airport,USW00013883,COLUMBIA,1.24,Exact ICAO
+CAK,Akron Canton Regional Airport,USW00014895,AKRON CANTON AP,0.24,Exact ICAO
+CDC,Cedar City Regional Airport,USW00093129,CEDAR CITY AP,0.66,Exact ICAO
+CHA,Chattanooga Metropolitan Airport (Lovell Field),USW00013882,CHATTANOOGA AP,0.37,Exact ICAO
+CHO,Charlottesville Albemarle Airport,USW00093736,CHARLOTTESVILLE ALBEMARLE AP,0.22,Exact ICAO
+CHS,Charleston International Airport,USW00013880,CHARLESTON INTL AP,0.35,Exact ICAO
+CID,The Eastern Iowa Airport,USW00014990,CEDAR RAPIDS MUNI AP,1.16,Exact ICAO
+CIU,Chippewa County International Airport,USW00004869,CHIPPEWA INTL AP,0.95,Exact ICAO
+CKB,North Central West Virginia Airport,USW00003802,CLARKSBURG BENEDUM AP,0.72,Exact ICAO
+CLE,Cleveland Hopkins International Airport,USW00014820,CLEVELAND,0.87,Exact ICAO
+CLL,Easterwood Field,USW00003904,COLLEGE STN EASTERWOOD FLD,0.29,Exact ICAO
+CLT,Charlotte Douglas International Airport,USW00013881,CHARLOTTE DOUGLAS AP,1.4,Exact ICAO
+CMH,John Glenn Columbus International Airport,USW00014821,JOHN GLENN INTL AP,1.52,Exact ICAO
+CMI,University of Illinois Willard Airport,USW00094870,CHAMPAIGN URBANA WILLARD AP,0.82,Exact ICAO
+CMX,Houghton County Memorial Airport,USW00014858,HANCOCK HOUGHTON CO AP,0.69,Exact ICAO
+CNY,Canyonlands Regional Airport,USW00093075,MOAB CANYONLAND AP,0.88,Exact ICAO
+COD,Yellowstone Regional Airport,USW00024045,CODY MUNI AP,0.7,Exact ICAO
+COS,City of Colorado Springs Municipal Airport,USW00093037,COLORADO SPRINGS MUNI AP,1.15,Exact ICAO
+COU,Columbia Regional Airport,USW00003945,COLUMBIA RGNL AP,0.44,Exact ICAO
+CPR,Casper-Natrona County International Airport,USW00024089,CASPER-NATRONA CO AP,1.45,Exact ICAO
+CRP,Corpus Christi International Airport,USW00012924,CORPUS CHRISTI,1.81,Exact ICAO
+CRW,Yeager Airport,USW00013866,CHARLESTON - YEAGER AP,0.72,Exact ICAO
+CSG,Columbus Airport,USW00093842,COLUMBUS METRO AP,0.24,Exact ICAO
+CVG,Cincinnati Northern Kentucky International Airport,USW00093814,CINCINNATI/NORTHERN KENTUCKY I,0.64,Exact ICAO
+CWA,Central Wisconsin Airport,USW00094890,MOSINEE,0.71,Exact ICAO
+CYS,Cheyenne Regional Jerry Olson Field,USW00024018,CHEYENNE,0.65,Nearest station
+DAB,Daytona Beach International Airport,USW00012834,DAYTONA BEACH INTL AP,1.56,Exact ICAO
+DAL,Dallas Love Field,USW00013960,DALLAS FAA AP,1.32,Exact ICAO
+DAY,James M. Cox Dayton International Airport,USW00093815,DAYTON INTL AP,0.45,Exact ICAO
+DCA,Ronald Reagan Washington National Airport,USW00013743,WASHINGTON REAGAN NATL AP,0.62,Exact ICAO
+DDC,Dodge City Regional Airport,USW00013985,DODGE CITY,0.41,Exact ICAO
+DEC,Decatur Airport,USW00003887,DECATUR AP,0.68,Exact ICAO
+DEN,Denver International Airport,USW00003017,DENVER INTL AP,2.12,Exact ICAO
+DFW,Dallas Fort Worth International Airport,USW00003927,DAL-FTW WSCMO AP,1.51,Exact ICAO
+DHN,Dothan Regional Airport,USW00013839,DOTHAN RGNL AP,0.71,Exact ICAO
+DIK,Dickinson Theodore Roosevelt Regional Airport,USW00024012,DICKINSON THEODORE ROOSEVELT R,0.43,Exact ICAO
+DLH,Duluth International Airport,USW00014913,DULUTH,1.0,Exact ICAO
+DRO,Durango La Plata County Airport,USW00093005,DURANGO LA PLATA CO AP,1.09,Exact ICAO
+DSM,Des Moines International Airport,USW00014933,DES MOINES INTL AP,0.3,Exact ICAO
+DTW,Detroit Metropolitan Wayne County Airport,USW00094847,DETROIT METRO AP,2.68,Exact ICAO
+DVL,Devils Lake Regional Airport,USW00094928,DEVILS LAKE MUNI AP,0.67,Exact ICAO
+EAR,Kearney Regional Airport,USW00014905,KEARNEY MUNI AP,0.9,Exact ICAO
+EAU,Chippewa Valley Regional Airport,USW00014991,CHIPPEWA VALLEY RGNL AP,0.32,Exact ICAO
+ECP,Northwest Florida Beaches International Airport,USW00073805,NW FLORIDA BEACHES INTL AP,1.17,Exact ICAO
+EGE,Eagle County Regional Airport,USW00023063,EAGLE CO AP,0.83,Exact ICAO
+EKO,Elko Regional Airport,USW00024121,ELKO RGNL AP,0.48,Exact ICAO
+ELM,Elmira Corning Regional Airport,USW00014748,ELMIRA CORNING RGNL AP,0.99,Exact ICAO
+ELP,El Paso International Airport,USW00023044,EL PASO INTL AP,0.31,Exact ICAO
+ESC,Delta County Airport,USW00094853,ESCANABA DELTA CO AP,1.2,Exact ICAO
+EUG,Eugene Airport,USW00024221,EUGENE-MAHLON SWEET FLD,0.99,Exact ICAO
+EVV,Evansville Regional Airport,USW00093817,EVANSVILLE RGNL AP,2.14,Exact ICAO
+EWN,Coastal Carolina Regional Airport,USW00093719,NEW BERN - ASOS,0.69,Exact ICAO
+EWR,Newark Liberty International Airport,USW00014734,NEWARK LIBERTY INTL AP,0.74,Exact ICAO
+EYW,Key West International Airport,USW00012836,KEY W INTL AP,0.44,Exact ICAO
+FAR,Hector International Airport,USW00014914,FARGO HECTOR INTL AP,0.48,Exact ICAO
+FAT,Fresno Yosemite International Airport,USW00093193,FRESNO YOSEMITE INTL,0.51,Exact ICAO
+FAY,Fayetteville Regional Airport - Grannis Field,USW00093740,FAYETTEVILLE RGNL AP GRANNIS F,0.2,Exact ICAO
+FLG,Flagstaff Pulliam Airport,USW00003103,FLAGSTAFF AP,0.58,Exact ICAO
+FLL,Fort Lauderdale Hollywood International Airport,USW00012849,FT LAUDERDALE INTL AP,1.18,Exact ICAO
+FNT,Bishop International Airport,USW00014826,FLINT FCWOS,0.6,Exact ICAO
+FOD,Fort Dodge Regional Airport,USW00094933,FT DODGE OZARK AIRLINES,0.71,Exact ICAO
+FSD,Sioux Falls Regional Airport,USW00014944,SIOUX FALLS,0.98,Exact ICAO
+FSM,Fort Smith Regional Airport,USW00013964,FT SMITH RGNL AP,0.41,Exact ICAO
+FWA,Fort Wayne International Airport,USW00014827,FT WAYNE INTL AP,1.23,Exact ICAO
+GCC,Northeast Wyoming Regional Airport,USW00094023,GILLETTE CAMPBELL CO AP,1.05,Exact ICAO
+GCK,Garden City Regional Airport,USW00023064,GARDEN CITY RGNL AP,0.62,Exact ICAO
+GEG,Spokane International Airport,USW00024157,SPOKANE INTL AP,0.49,Exact ICAO
+GFK,Grand Forks International Airport,USW00014916,GRAND FORKS INTL AP,0.89,Exact ICAO
+GGG,East Texas Regional Airport,USW00003901,LONGVIEW E TX RGNL AP,0.79,Exact ICAO
+GJT,Grand Junction Regional Airport,USW00023066,GRAND JUNCTION WALKER FLD,1.31,Exact ICAO
+GNV,Gainesville Regional Airport,USW00012816,GAINESVILLE RGNL AP,0.45,Exact ICAO
+FCA,Glacier Park International Airport,USW00024146,KALISPELL GLACIER AP,0.93,Exact ICAO
+GPT,Gulfport Biloxi International Airport,USW00093874,GULFPORT - BILOXI AP,1.28,Exact ICAO
+GRB,Austin Straubel International Airport,USW00014898,GREEN BAY,2.3,Exact ICAO
+GRI,Central Nebraska Regional Airport,USW00014935,GRAND IS CNTRL NE RGNL AP,0.74,Exact ICAO
+GRK,Killeen Regional Airport / Robert Gray Army Airfield,USW00003902,ROBERT GRAY AAF,0.42,Exact ICAO
+GRR,Gerald R. Ford International Airport,USW00094860,GRAND RAPIDS,2.32,Exact ICAO
+GSO,Piedmont Triad International Airport,USW00013723,GREENSBORO AP,0.59,Exact ICAO
+GSP,Greenville-Spartanburg International Airport,USW00003870,GREER,1.38,Exact ICAO
+GTF,Great Falls International Airport,USW00024143,GREAT FALLS AP,1.31,Exact ICAO
+GTR,Golden Triangle Regional Airport,USW00053893,GOLDEN TRIANGLE,0.75,Exact ICAO
+GUC,Gunnison Crested Butte Regional Airport,USW00093007,GUNNISON CO AP,0.19,Exact ICAO
+HDN,Yampa Valley Airport,USW00094025,HAYDEN YAMPA VALLEY AP,0.04,Exact ICAO
+HGR,Hagerstown Regional Richard A Henson Field,USW00093706,HAGERSTOWN RGNL AP,0.36,Exact ICAO
+HIB,Range Regional Airport,USW00094931,HIBBING CHISHOLM HIBBING AP,0.6,Exact ICAO
+HLN,Helena Regional Airport,USW00024144,HELENA AP ASOS,0.54,Exact ICAO
+HOB,Lea County Regional Airport,USW00093034,HOBBS FAA,0.77,Exact ICAO
+HOU,William P. Hobby Airport,USW00012918,HOUSTON WILLIAM P HOBBY AP,0.52,Exact ICAO
+HPN,Westchester County Airport,USW00094745,WESTCHESTER CO AP,0.6,Exact ICAO
+HRL,Valley International Airport,USW00012904,HARLINGEN RIO GRANDE VLY INTL,0.23,Exact ICAO
+HSV,Huntsville International Airport,USW00003856,HUNTSVILLE INTNL AP,1.39,Exact ICAO
+HTS,Tri-State Airport / Milton J. Ferguson Field,USW00003860,HUNTINGTON TRI-STATE AP,0.33,Exact ICAO
+HHH,Hilton Head Airport,USW00063837,HILTON HEAD ISLAND AP,0.89,Exact ICAO
+HYA,Cape Cod Gateway Airport,USW00094720,HYANNIS BARNSTABLE MUNI AP,0.93,Exact ICAO
+HYS,Hays Regional Airport,USW00003968,HAYS MUNI AP,0.83,Exact ICAO
+IAD,Washington Dulles International Airport,USW00093738,WASHINGTON DULLES INTL AP,1.32,Exact ICAO
+IAG,Niagara Falls International Airport,USW00004724,NIAGARA FALLS INTL AP,0.67,Exact ICAO
+IAH,George Bush Intercontinental Airport,USW00012960,HOUSTON INTERCONTINENTAL AP,1.87,Exact ICAO
+ICT,Wichita Dwight D. Eisenhower National Airport,USW00003928,WICHITA,1.36,Exact ICAO
+IDA,Idaho Falls Regional Airport,USW00024145,IDAHO FALLS FAA AP,0.72,Exact ICAO
+ILM,Wilmington International Airport,USW00013748,WILMINGTON INTL AP,0.78,Exact ICAO
+IMT,Ford Airport,USW00094893,IRON MTN FORD AP,0.66,Exact ICAO
+IND,Indianapolis International Airport,USW00093819,INDIANAPOLIS,1.63,Exact ICAO
+INL,Falls International Airport,USW00014918,INTL FALLS INTL AP,0.94,Exact ICAO
+ISP,Long Island MacArthur Airport,USW00004781,ISLIP-LI MACARTHUR AP,0.27,Exact ICAO
+ITH,Ithaca Tompkins Regional Airport,USW00094761,ITHACA TOMPKINS CO,1.09,Exact ICAO
+AZA,Mesa Gateway Airport,USW00023104,PHOENIX,2.49,Exact ICAO
+JAC,Jackson Hole Airport,USW00024166,JACKSON HOLE AP,0.9,Exact ICAO
+JAN,Jackson-Medgar Wiley Evers International Airport,USW00003940,JACKSON INTL AP,0.96,Exact ICAO
+JAX,Jacksonville International Airport,USW00013889,JACKSONVILLE,1.6,Exact ICAO
+JFK,John F. Kennedy International Airport,USW00094789,JFK INTL AP,1.3,Exact ICAO
+JLN,Joplin Regional Airport,USW00013987,JOPLIN RGNL AP,0.27,Exact ICAO
+JMS,Jamestown Regional Airport,USW00014919,JAMESTOWN MUNI AP,0.74,Exact ICAO
+USA,Concord-Padgett Regional Airport,USW00063801,CONCORD RGNL AP,0.27,Exact ICAO
+JST,John Murtha Johnstown Cambria County Airport,USW00004726,JOHNSTOWN CAMBRIA CO AP,0.29,Exact ICAO
+LAN,Capital Region International Airport,USW00014836,LANSING CAPITAL CITY AP,1.15,Exact ICAO
+LAR,Laramie Regional Airport,USW00024022,LARAMIE AP,0.51,Exact ICAO
+LAS,Harry Reid International Airport,USW00023169,MCCARRAN INTL AP,1.64,Exact ICAO
+LAW,Lawton Fort Sill Regional Airport,USW00003950,LAWTON MUNI AP,1.1,Exact ICAO
+LAX,Los Angeles International Airport,USW00023174,LOS ANGELES INTL AP,2.02,Exact ICAO
+LBB,Lubbock Preston Smith International Airport,USW00023042,LUBBOCK,1.33,Exact ICAO
+LBE,Arnold Palmer Regional Airport,USW00054735,LATROBE,0.92,Exact ICAO
+LBF,North Platte Regional Airport Lee Bird Field,USW00024023,N PLATTE RGNL AP,1.35,Exact ICAO
+LBL,Liberal Mid-America Regional Airport,USW00023020,LIBERAL MUNI AP,0.88,Exact ICAO
+LCH,Lake Charles Regional Airport,USW00003937,LAKE CHARLES,0.73,Exact ICAO
+LCK,Rickenbacker International Airport,USW00013812,COLUMBUS RICKENBACKER,0.57,Exact ICAO
+LEX,Blue Grass Airport,USW00093820,LEXINGTON BLUEGRASS AP,0.43,Exact ICAO
+LFT,Lafayette Regional Airport,USW00013976,LAFAYETTE RGNL AP,0.76,Exact ICAO
+LGA,LaGuardia Airport,USW00014732,LAGUARDIA AP,0.69,Exact ICAO
+LGB,Long Beach International Airport,USW00023129,LONG BEACH DAUGHERTY AP,0.59,Exact ICAO
+LIT,Bill & Hillary Clinton National Airport/Adams Field,USW00013963,LITTLE ROCK AP ADAMS FLD,1.14,Exact ICAO
+LNK,Lincoln Airport,USW00014939,LINCOLN AP,0.41,Exact ICAO
+LRD,Laredo International Airport,USW00012907,LAREDO INTL AP,1.27,Exact ICAO
+LSE,La Crosse Regional Airport,USW00014920,LA CROSSE MUNI AP,0.29,Exact ICAO
+LWS,Lewiston Nez Perce County Airport,USW00024149,LEWISTON AP,0.03,Exact ICAO
+MAF,Midland International Air and Space Port,USW00023023,MIDLAND ODESSA,1.21,Exact ICAO
+MBS,MBS International Airport,USW00014845,SAGINAW MBS INTL AP,0.58,Exact ICAO
+MCI,Kansas City International Airport,USW00003947,KANSAS CITY INTL AP,1.53,Exact ICAO
+MCO,Orlando International Airport,USW00012815,ORLANDO INTL AP,1.93,Exact ICAO
+MCW,Mason City Municipal Airport,USW00014940,MASON CITY MUNI AP,0.67,Exact ICAO
+MDT,Harrisburg International Airport,USW00014711,MIDDLETOWN HARRISBURG INTL AP,0.94,Exact ICAO
+MDW,Chicago Midway International Airport,USW00014819,CHICAGO MIDWAY AP,0.31,Exact ICAO
+MEI,Key Field / Meridian Regional Airport,USW00013865,MERIDIAN KEY FLD,0.26,Exact ICAO
+MEM,Frederick W. Smith International Airport,USW00013893,MEMPHIS INTL AP,1.67,Exact ICAO
+MFE,McAllen Miller International Airport,USW00012959,MCALLEN MILLER INTL AP,0.73,Exact ICAO
+MFR,Rogue Valley International-Medford Airport,USW00024225,MEDFORD INTL AP,0.33,Exact ICAO
+MGM,Montgomery Regional (Dannelly Field) Airport,USW00013895,MONTGOMERY AP,1.27,Exact ICAO
+MGW,Morgantown Municipal Airport Walter L. (Bill) Hart Field,USW00013736,MORGANTOWN MUNI AP,0.76,Exact ICAO
+MHK,Manhattan Regional Airport,USW00003936,MANHATTAN ASOS,1.01,Exact ICAO
+MHT,Manchester-Boston Regional Airport,USW00014710,MANCHESTER AP,0.32,Exact ICAO
+MIA,Miami International Airport,USW00012839,MIAMI INTL AP,2.86,Exact ICAO
+MKE,General Mitchell International Airport,USW00014839,MILWAUKEE MITCHELL AP,1.07,Exact ICAO
+MLB,Melbourne Orlando International Airport,USW00012838,MELBOURNE INTL AP,0.6,Exact ICAO
+MLI,Quad City International Airport,USW00014923,MOLINE QUAD CITY INTL AP,1.34,Exact ICAO
+MLU,Monroe Regional Airport,USW00013942,MONROE RGNL AP,0.89,Exact ICAO
+MOB,Mobile Regional Airport,USW00013894,MOBILE,1.34,Exact ICAO
+MOT,Minot International Airport,USW00024013,MINOT INTL AP,1.02,Exact ICAO
+MRY,Monterey Regional Airport,USW00023259,MONTEREY PENINSUL AP,0.58,Exact ICAO
+MSN,Dane County Regional Truax Field,USW00014837,MADISON DANE CO RGNL AP,0.64,Exact ICAO
+MSO,Missoula Montana Airport,USW00024153,MISSOULA INTL AP,0.59,Exact ICAO
+MSP,Minneapolis–Saint Paul International Airport / Wold–Chamberlain Field,USW00014922,MINNEAPOLIS-ST PAUL INTL AP,0.96,Exact ICAO
+MSY,Louis Armstrong New Orleans International Airport,USW00012916,NEW ORLEANS AP,1.34,Exact ICAO
+MTJ,Montrose Regional Airport,USW00093013,MONTROSE RGNL AP,0.61,Exact ICAO
+MVY,Martha's Vineyard Airport,USW00094724,VINEYARD HAVEN MARTHAS VINEYAR,0.12,Exact ICAO
+MYR,Myrtle Beach International Airport,USW00013717,MYRTLE BEACH AFB,0.61,Exact ICAO
+YUM,Yuma International Airport / Marine Corps Air Station Yuma,USW00003145,YUMA MCAS,0.69,Exact ICAO
+OAJ,Albert J Ellis Airport,USW00093753,JACKSONVLLE A ELLIS AP,0.62,Exact ICAO
+OAK,Oakland San Francisco Bay Airport,USW00023230,OAKLAND INTL AP,1.08,Exact ICAO
+OKC,OKC Will Rogers World Airport,USW00013967,OKLAHOMA CY WILL ROGERS WORLD,0.6,Exact ICAO
+OMA,Eppley Airfield,USW00014942,OMAHA EPPLEY AIRFIELD,1.17,Exact ICAO
+ONT,Ontario International Airport,USW00003102,ONTARIO INTL AP,2.24,Exact ICAO
+ORD,Chicago O'Hare International Airport,USW00094846,CHICAGO OHARE INTL AP,3.01,Exact ICAO
+ORF,Norfolk International Airport,USW00013737,NORFOLK INTL AP,1.17,Exact ICAO
+ORH,Worcester Regional Airport,USW00094746,WORCESTER,0.42,Exact ICAO
+OTH,Southwest Oregon Regional Airport,USW00024284,N BEND SW OREGON RGNL AP,0.46,Exact ICAO
+PAE,Seattle Paine Field International Airport,USW00024222,EVERETT SNOHOMISH CO AP,1.89,Exact ICAO
+PBG,Plattsburgh International Airport,USW00064776,PLATTSBURGH INTL AP,1.36,Exact ICAO
+PDX,Portland International Airport,USW00024229,PORTLAND INTL AP,1.18,Exact ICAO
+PGD,Punta Gorda Airport,USW00012812,PUNTA GORDA CHARLOTTE CO AP,0.4,Exact ICAO
+PHL,Philadelphia International Airport,USW00013739,PHILA INTL AP,1.22,Exact ICAO
+PHX,Phoenix Sky Harbor International Airport,USW00023183,PHOENIX AP,0.86,Exact ICAO
+PIA,General Wayne A. Downing Peoria International Airport,USW00014842,GENERAL WAYNE A DOWNING INTL A,0.82,Exact ICAO
+PIB,Hattiesburg Laurel Regional Airport,USW00053808,LAUREL HATTIESBURG RGNL AP,0.36,Exact ICAO
+PIE,St. Petersburg Clearwater International Airport,USW00012873,ST PETERSBURG CLEARWATER INTL,0.31,Exact ICAO
+PIH,Pocatello Regional Airport,USW00024156,POCATELLO RGNL AP,2.23,Exact ICAO
+PIT,Pittsburgh International Airport,USW00094823,PITTSBURGH ASOS,1.74,Exact ICAO
+PLN,Pellston Regional Airport of Emmet County Airport,USW00014841,PELLSTON RGNL AP,0.78,Exact ICAO
+PNS,Pensacola International Airport,USW00013899,PENSACOLA RGNL AP,0.6,Exact ICAO
+PQI,Presque Isle International Airport,USW00014604,PRESQUE ISLE MUNI AP,0.75,Exact ICAO
+PRC,Prescott Regional Airport - Ernest A. Love Field,USW00023184,PRESCOTT LOVE FLD,0.52,Exact ICAO
+PSC,Tri Cities Airport,USW00024163,PASCO TRI CITIES AP,0.53,Exact ICAO
+PSM,Portsmouth International Airport at Pease,USW00004743,PORTSMOUTH PEASE AFB,0.81,Exact ICAO
+PSP,Palm Springs International Airport,USW00093138,PALM SPRINGS ASOS,0.87,Exact ICAO
+PVD,Rhode Island T. F. Green International Airport,USW00014765,PROVIDENCE,0.63,Exact ICAO
+PVU,Provo Municipal Airport,USW00024174,PROVO AP,0.07,Exact ICAO
+PWM,Portland International Jetport,USW00014764,PORTLAND JETPORT,0.56,Exact ICAO
+RAP,Rapid City Regional Airport,USW00024090,RAPID CITY RGNL AP,0.21,Exact ICAO
+RDD,Redding Municipal Airport,USW00024257,REDDING AP,0.75,Exact ICAO
+RDM,Roberts Field,USW00024230,REDMOND AP,0.76,Exact ICAO
+RDU,Raleigh-Durham International Airport,USW00013722,RALEIGH AP,1.58,Exact ICAO
+RFD,Chicago Rockford International Airport,USW00094822,ROCKFORD GTR ROCKFORD AP,0.4,Exact ICAO
+RHI,Rhinelander Oneida County Airport,USW00004803,RHINELANDER ONEIDA CO AP,1.17,Exact ICAO
+RIC,Richmond International Airport,USW00013740,RICHMOND INTL AP,0.79,Exact ICAO
+RIW,Central Wyoming Regional Airport,USW00024061,RIVERTON,1.41,Exact ICAO
+RKS,Southwest Wyoming Regional Airport,USW00024027,ROCK SPRINGS AP,1.02,Exact ICAO
+RNO,Reno Tahoe International Airport,USW00023185,RENO AP,0.97,Exact ICAO
+ROA,Roanoke–Blacksburg Regional Airport,USW00013741,ROANOKE INTL AP,0.94,Exact ICAO
+ROC,Frederick Douglass Greater Rochester International Airport,USW00014768,ROCHESTER GTR INTL,0.3,Exact ICAO
+ROW,Roswell Air Center Airport,USW00023009,ROSWELL IND AIR PK,2.22,Exact ICAO
+RST,Rochester International Airport,USW00014925,ROCHESTER INTL AP,0.81,Exact ICAO
+RSW,Southwest Florida International Airport,USW00012894,FT MYERS SW FLORIDA RGNL AP,0.54,Exact ICAO
+SAF,Santa Fe Municipal Airport,USW00023049,SANTA FE CO MUNI AP,0.93,Exact ICAO
+SAN,San Diego International Airport,USW00023188,SAN DIEGO INTL AP,0.65,Exact ICAO
+SAT,San Antonio International Airport,USW00012921,SAN ANTONIO INTL AP,1.8,Exact ICAO
+SAV,Savannah Hilton Head International Airport,USW00003822,SAVANNAH INTL AP,0.57,Exact ICAO
+MQT,Marquette Sawyer Regional Airport,USW00094836,GWINN K I SAWYER AFB,0.36,Exact ICAO
+SBA,Santa Barbara Municipal Airport,USW00023190,SANTA BARBARA MUNI AP,0.32,Exact ICAO
+SBN,South Bend International Airport,USW00014848,S BEND AP,0.13,Exact ICAO
+SBP,San Luis County Regional Airport,USW00093206,SAN LUIS OBISPO MCCHESNEY FLD,0.25,Exact ICAO
+SCK,Stockton Metropolitan Airport,USW00023237,STOCKTON AP,1.09,Exact ICAO
+SDF,Louisville Muhammad Ali International Airport,USW00093821,LOUISVILLE INTL AP,0.85,Exact ICAO
+SEA,Seattle–Tacoma International Airport,USW00024233,SEATTLE TACOMA AP,0.48,Exact ICAO
+SFB,Orlando Sanford International Airport,USW00012854,ORLANDO SANFORD AP,1.04,Exact ICAO
+SFO,San Francisco International Airport,USW00023234,SAN FRANCISCO INTL AP,0.81,Exact ICAO
+SGF,Springfield Branson National Airport,USW00013995,SPRINGFIELD,1.52,Exact ICAO
+SGU,St George Regional Airport,USW00023186,ST GEORGE MUNI AP,10.65,Exact ICAO
+SHR,Sheridan County Airport,USW00024029,SHERIDAN AP,1.09,Exact ICAO
+SHV,Shreveport Regional Airport,USW00013957,SHREVEPORT,1.53,Exact ICAO
+SJC,Mineta San Jose International Airport,USW00023293,SAN JOSE,0.54,Exact ICAO
+SJT,San Angelo Regional Mathis Field,USW00023034,SAN ANGELO,1.56,Exact ICAO
+SLC,Salt Lake City International Airport,USW00024127,SALT LAKE CITY INTL AP,2.39,Exact ICAO
+SLN,Salina Municipal Airport,USW00003919,SALINA MUNI AP,1.4,Exact ICAO
+SMF,Sacramento International Airport,USW00093225,SACRAMENTO METRO AP,0.66,Exact ICAO
+SMX,Santa Maria Public Airport Captain G Allan Hancock Field,USW00023273,SANTA MARIA PUBLIC AP,0.68,Exact ICAO
+SNA,John Wayne Orange County International Airport,USW00093184,SANTA ANA JOHN WAYNE AP,0.54,Exact ICAO
+SPI,Abraham Lincoln Capital Airport,USW00093822,SPRINGFIELD ABRAHAM LINCOLN CA,0.53,Exact ICAO
+SPS,Wichita Falls Municipal Airport / Sheppard Air Force Base,USW00013966,WICHITA FALLS MUNI AP,1.14,Exact ICAO
+SRQ,Sarasota Bradenton International Airport,USW00012871,SARASOTA BRADENTON AP,0.86,Exact ICAO
+STC,Saint Cloud Regional Airport,USW00014926,ST CLOUD RGNL AP,0.69,Exact ICAO
+STL,St. Louis Lambert International Airport,USW00013994,ST LOUIS LAMBERT INTL AP,0.51,Exact ICAO
+STS,Charles M. Schulz Sonoma County Airport,USW00023213,SANTA ROSA SONOMA CO AP,0.62,Exact ICAO
+SUN,Friedman Memorial Airport,USW00094161,HAILEY FRIEDMAN MEM AP,0.59,Exact ICAO
+SUX,Sioux Gateway Airport / Brigadier General Bud Day Field,USW00014943,SIOUX CITY AP,0.7,Exact ICAO
+SWF,New York Stewart International Airport,USW00014714,STEWART FLD,0.88,Exact ICAO
+SWO,Stillwater Regional Airport,USW00003965,STILLWATER RGNL AP,0.35,Exact ICAO
+SYR,Syracuse Hancock International Airport,USW00014771,SYRACUSE HANCOCK INTL AP,0.2,Exact ICAO
+TLH,Tallahassee International Airport,USW00093805,TALLAHASSEE,2.47,Exact ICAO
+TOL,Eugene F. Kranz Toledo Express Airport,USW00094830,TOLEDO EXPRESS AP,0.21,Exact ICAO
+TPA,Tampa International Airport,USW00012842,TAMPA INTL AP,1.51,Exact ICAO
+TRI,Tri-Cities Regional TN/VA Airport,USW00013877,BRISTOL AP,0.91,Exact ICAO
+TTN,Trenton Mercer Airport,USW00014792,TRENTON-MERCER AP,0.2,Exact ICAO
+TUL,Tulsa International Airport,USW00013968,TULSA INTL AP,0.73,Exact ICAO
+TUS,Tucson International Airport,USW00023160,TUCSON INTL AP,2.54,Exact ICAO
+TVC,Cherry Capital Airport,USW00014850,TRAVERSE CY CHERRY CAPITAL AP,1.17,Exact ICAO
+TWF,Joslin Field Magic Valley Regional Airport,USW00094178,TWIN FALLS SUN VALLEY RGNL AP,0.93,Exact ICAO
+TXK,Texarkana Regional Airport (Webb Field),USW00013977,TEXARKANA WEBB FLD,0.4,Exact ICAO
+TYR,Tyler Pounds Regional Airport,USW00013972,TYLER POUNDS FLD,0.52,Exact ICAO
+TYS,McGhee Tyson Airport,USW00013891,KNOXVILLE AP,1.08,Exact ICAO
+SCE,State College Regional Airport,USW00054739,UNIVERSITY PARK,0.14,Exact ICAO
+VCT,Victoria Regional Airport,USW00012912,VICTORIA RGNL AP,1.57,Exact ICAO
+VEL,Vernal Regional Airport,USW00094030,VERNAL MUNI AP,0.77,Exact ICAO
+VLD,Valdosta Regional Airport,USW00093845,VALDOSTA RGNL AP,0.73,Exact ICAO
+VPS,Destin-Fort Walton Beach Airport,USW00013858,VALPARAISO EGLIN AFB,0.24,Exact ICAO
+WYS,Yellowstone Airport,USW00094163,WEST YELLOWSTONE,0.58,Exact ICAO
+XNA,Northwest Arkansas National Airport,USW00053922,FAYETTEVILLE SPRINGDALE NW AR,0.96,Exact ICAO
+XWA,Williston Basin International Airport,USW00094099,WILLISTON AP,0.81,Exact ICAO
+BET,Bethel Airport,USW00026615,BETHEL AP,0.74,Exact ICAO
+BRW,Wiley Post Will Rogers Memorial Airport,USW00027502,BARROW AP,0.96,Exact ICAO
+CDV,Merle K (Mudhole) Smith Airport,USW00026410,CORDOVA AP,1.95,Exact ICAO
+ADK,Adak Airport,USW00025704,ADAK AP,0.5,Exact ICAO
+DLG,Dillingham Airport,USW00025513,DILLINGHAM AP,0.89,Exact ICAO
+ADQ,Kodiak Airport,USW00025501,KODIAK AP,0.36,Exact ICAO
+FAI,Fairbanks International Airport,USW00026411,FAIRBANKS INTL AP,1.64,Exact ICAO
+GST,Gustavus Airport,USW00025322,GUSTAVUS,1.58,Exact ICAO
+JNU,Juneau International Airport,USW00025309,JUNEAU AP,1.07,Exact ICAO
+AKN,King Salmon Airport,USW00025503,KING SALMON,1.32,Exact ICAO
+KTN,Ketchikan International Airport,USW00025325,KETCHIKAN AP,0.6,Nearest station
+ANC,Ted Stevens Anchorage International Airport,USW00026451,ANCHORAGE TED STEVENS INTL AP,2.18,Exact ICAO
+OME,Nome Airport,USW00026617,NOME AP,0.27,Exact ICAO
+OTZ,Ralph Wien Memorial Airport,USW00026616,KOTZEBUE AP,0.35,Exact ICAO
+PSG,Petersburg James A Johnson Airport,USW00025329,PETERSBURG 1,0.64,Exact ICAO
+SCC,Deadhorse Airport,USW00027406,DEADHORSE,0.67,Exact ICAO
+SIT,Sitka Rocky Gutierrez Airport,USW00025333,SITKA AP,0.3,Exact ICAO
+WRG,Wrangell Airport,USW00025338,WRANGELL AP,1.63,Exact ICAO
+YAK,Yakutat Airport,USW00025339,YAKUTAT AP,0.72,Exact ICAO
+KOA,Ellison Onizuka Kona International Airport at Keāhole,USW00021510,KAILUA KONA KE-AHOLE AP,0.28,Exact ICAO
+LIH,Lihue Airport,USW00022536,LIHUE WSO AP 1020.1,0.71,Exact ICAO
+HNL,Daniel K. Inouye International Airport,USW00022521,HONOLULU INTL AP,1.55,Exact ICAO
+OGG,Kahului International Airport,USW00022516,KAHULUI AP,0.89,Exact ICAO
+ITO,Hilo International Airport,USW00021504,HILO INTL AP 87,0.44,Exact ICAO

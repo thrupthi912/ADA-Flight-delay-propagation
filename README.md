@@ -156,3 +156,35 @@ The cleaning pipeline is deterministic for a given input file: running
 dataset and the same `data_quality_summary.json`. The synthetic test fixtures in
 `tests/fixtures/` are clearly labelled test data, not real BTS data, and let
 the tests run without the full dataset.
+
+## Weather-enhanced delay propagation model
+
+### Pipeline
+1. Recover flight records with `recover_flights.py`.
+2. Match US airports to nearby NOAA GHCNh weather stations using `match_weather_stations.py`, `find_nearest_stations.py`, and the station reference files.
+3. Download hourly 2024 station observations using `download_weather.py`.
+4. Clean and prepare observations using `src/preprocess_weather.py`.
+5. Train and evaluate the weather-enhanced model using `src/train_weather_model.py`.
+
+### Weather features
+The weather-enhanced model adds temperature, wind speed, precipitation, relative humidity, visibility, and sea-level pressure to the core flight-delay features.
+
+Weather observations are matched to the origin airport of the next flight. The matching uses the latest available observation at or before the incoming flight's actual arrival time, with a 120-minute lookback. Future observations are not used.
+
+### Results
+
+The core and weather-enhanced models were compared on the same test rows and split.
+
+| Model | Test MAE | Test RMSE |
+|---|---:|---:|
+| Core model | 16.253 | 33.350 |
+| Weather-enhanced model | 15.547 | 33.130 |
+
+The weather-enhanced model improved test MAE by approximately 4.34% and RMSE by 0.66% compared with the core model.
+
+### Reproducibility notes
+- Weather data is sourced from NOAA GHCNh hourly observations for 2024.
+- Raw weather downloads and the merged weather-observation dataset are generated locally and are not committed to Git.
+- `match_weather_stations.py` currently expects the cleaned flights CSV at `~/Downloads/flight_data/flights_clean.csv`.
+- The weather pipeline depends on the airport and NOAA station reference CSV files in the repository.
+- Flight recovery and weather matching involve assumptions. In particular, recovered flight statuses are inferred from available arrival evidence and should not be interpreted as directly observed labels.
