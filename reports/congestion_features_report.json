@@ -1,0 +1,56 @@
+{
+  "total_input_rows": 2319468,
+  "rows_written": 2319468,
+  "rows_skipped_missing_timestamps": 0,
+  "null_crs_dep_dt_utc": 0,
+  "null_crs_arr_dt_utc": 0,
+  "n_origin_airports": 335,
+  "n_dest_airports": 343,
+  "elapsed_seconds": 183.5,
+  "output_path": "data/processed/congestion_features.csv",
+  "duplicate_flight_ids": 0,
+  "missing_per_feature": {
+    "dep_count_origin_1h": 0,
+    "dep_count_origin_3h": 0,
+    "arr_count_dest_1h": 0,
+    "arr_count_dest_3h": 0,
+    "total_traffic_origin_1h": 0
+  },
+  "feature_stats": {
+    "dep_count_origin_1h": {
+      "mean": 20.48,
+      "median": 16.0,
+      "max": 105,
+      "p95": 61.0,
+      "pct_zero": 5.87
+    },
+    "dep_count_origin_3h": {
+      "mean": 57.82,
+      "median": 46.0,
+      "max": 239,
+      "p95": 167.0,
+      "pct_zero": 3.15
+    },
+    "arr_count_dest_1h": {
+      "mean": 19.68,
+      "median": 14.0,
+      "max": 103,
+      "p95": 60.0,
+      "pct_zero": 5.78
+    },
+    "arr_count_dest_3h": {
+      "mean": 55.8,
+      "median": 43.0,
+      "max": 230,
+      "p95": 164.0,
+      "pct_zero": 2.86
+    },
+    "total_traffic_origin_1h": {
+      "mean": 39.41,
+      "median": 32.0,
+      "max": 197,
+      "p95": 110.0,
+      "pct_zero": 2.11
+    }
+  }
+}

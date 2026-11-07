@@ -260,3 +260,21 @@ data/airport_timezones_raw.csv
 data/processed/flights_clean.csv
 data/processed/flights_sensitivity_eligible.csv
 data/processed/monthly/
+
+# ---------------------------------------------------------------------------
+# Person 3 (Dhanush) — weather data directory
+# ---------------------------------------------------------------------------
+# Committed (small reference/catalog files):
+#   data/weather/airport_station_map.csv    31 KB  airport -> NOAA station map
+#   data/weather/isd-history.csv            2.8 MB full NOAA ISD station catalog
+#   data/weather/download_log.json          62 KB  per-station download audit log
+#
+# NOT committed (large generated or reproducible files):
+#   data/weather/weather_obs.csv            26 MB  regenerate with: python -m scripts.run_weather --skip-download
+#   data/weather/raw/                       60 MB  re-download with: python -m scripts.run_weather
+#
+# The three committed files are tracked directly; git will pick them up
+# because no wildcard rule covers data/weather/*.  The two exclusions below
+# are the only additions needed.
+data/weather/weather_obs.csv
+data/weather/raw/

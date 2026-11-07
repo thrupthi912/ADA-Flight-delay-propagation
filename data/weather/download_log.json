@@ -1,0 +1,2757 @@
+{
+  "total": 343,
+  "ok": 235,
+  "cached": 108,
+  "not_found": 0,
+  "errors": 0,
+  "stations": 343,
+  "years": [
+    2024
+  ],
+  "results": [
+    {
+      "station_id": "72517014737",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72517014737.csv",
+      "error": null
+    },
+    {
+      "station_id": "72266013962",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72266013962.csv",
+      "error": null
+    },
+    {
+      "station_id": "72365023050",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72365023050.csv",
+      "error": null
+    },
+    {
+      "station_id": "72659014929",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72659014929.csv",
+      "error": null
+    },
+    {
+      "station_id": "72216013869",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72216013869.csv",
+      "error": null
+    },
+    {
+      "station_id": "72506014756",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72506014756.csv",
+      "error": null
+    },
+    {
+      "station_id": "72256013959",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72256013959.csv",
+      "error": null
+    },
+    {
+      "station_id": "72594524283",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72594524283.csv",
+      "error": null
+    },
+    {
+      "station_id": "72407093730",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72407093730.csv",
+      "error": null
+    },
+    {
+      "station_id": "70454025704",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/70454025704.csv",
+      "error": null
+    },
+    {
+      "station_id": "70350025501",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/70350025501.csv",
+      "error": null
+    },
+    {
+      "station_id": "74754093915",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/74754093915.csv",
+      "error": null
+    },
+    {
+      "station_id": "72218003820",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72218003820.csv",
+      "error": null
+    },
+    {
+      "station_id": "70326025503",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/70326025503.csv",
+      "error": null
+    },
+    {
+      "station_id": "72518014735",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72518014735.csv",
+      "error": null
+    },
+    {
+      "station_id": "72784624160",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72784624160.csv",
+      "error": null
+    },
+    {
+      "station_id": "72363023047",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72363023047.csv",
+      "error": null
+    },
+    {
+      "station_id": "70273026451",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/70273026451.csv",
+      "error": null
+    },
+    {
+      "station_id": "72639094849",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72639094849.csv",
+      "error": null
+    },
+    {
+      "station_id": "72467693073",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72467693073.csv",
+      "error": null
+    },
+    {
+      "station_id": "72219013874",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72219013874.csv",
+      "error": null
+    },
+    {
+      "station_id": "72645704825",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72645704825.csv",
+      "error": null
+    },
+    {
+      "station_id": "72254013904",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72254013904.csv",
+      "error": null
+    },
+    {
+      "station_id": "72315003812",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72315003812.csv",
+      "error": null
+    },
+    {
+      "station_id": "72513014777",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72513014777.csv",
+      "error": null
+    },
+    {
+      "station_id": "72278623104",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72278623104.csv",
+      "error": null
+    },
+    {
+      "station_id": "72635794815",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72635794815.csv",
+      "error": null
+    },
+    {
+      "station_id": "72508014740",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72508014740.csv",
+      "error": null
+    },
+    {
+      "station_id": "70219026615",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/70219026615.csv",
+      "error": null
+    },
+    {
+      "station_id": "72566024028",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72566024028.csv",
+      "error": null
+    },
+    {
+      "station_id": "72384023155",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72384023155.csv",
+      "error": null
+    },
+    {
+      "station_id": "72515004725",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72515004725.csv",
+      "error": null
+    },
+    {
+      "station_id": "72607014606",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72607014606.csv",
+      "error": null
+    },
+    {
+      "station_id": "72228013876",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72228013876.csv",
+      "error": null
+    },
+    {
+      "station_id": "72480023157",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72480023157.csv",
+      "error": null
+    },
+    {
+      "station_id": "72677024033",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72677024033.csv",
+      "error": null
+    },
+    {
+      "station_id": "72764024011",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72764024011.csv",
+      "error": null
+    },
+    {
+      "station_id": "72755014958",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72755014958.csv",
+      "error": null
+    },
+    {
+      "station_id": "72797624217",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72797624217.csv",
+      "error": null
+    },
+    {
+      "station_id": "72433813802",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72433813802.csv",
+      "error": null
+    },
+    {
+      "station_id": "72439754831",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72439754831.csv",
+      "error": null
+    },
+    {
+      "station_id": "72327013897",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72327013897.csv",
+      "error": null
+    },
+    {
+      "station_id": "72681024131",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72681024131.csv",
+      "error": null
+    },
+    {
+      "station_id": "72509014739",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72509014739.csv",
+      "error": null
+    },
+    {
+      "station_id": "72241012917",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72241012917.csv",
+      "error": null
+    },
+    {
+      "station_id": "72213653883",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72213653883.csv",
+      "error": null
+    },
+    {
+      "station_id": "78514011603",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/78514011603.csv",
+      "error": null
+    },
+    {
+      "station_id": "72655594938",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72655594938.csv",
+      "error": null
+    },
+    {
+      "station_id": "72250012919",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72250012919.csv",
+      "error": null
+    },
+    {
+      "station_id": "70026027502",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/70026027502.csv",
+      "error": null
+    },
+    {
+      "station_id": "72774024135",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72774024135.csv",
+      "error": null
+    },
+    {
+      "station_id": "72232013970",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72232013970.csv",
+      "error": null
+    },
+    {
+      "station_id": "72617014742",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72617014742.csv",
+      "error": null
+    },
+    {
+      "station_id": "72528014733",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72528014733.csv",
+      "error": null
+    },
+    {
+      "station_id": "72288023152",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72288023152.csv",
+      "error": null
+    },
+    {
+      "station_id": "72406093721",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72406093721.csv",
+      "error": null
+    },
+    {
+      "station_id": "72679724132",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72679724132.csv",
+      "error": null
+    },
+    {
+      "station_id": "72310013883",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72310013883.csv",
+      "error": null
+    },
+    {
+      "station_id": "72521014895",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72521014895.csv",
+      "error": null
+    },
+    {
+      "station_id": "72475593129",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72475593129.csv",
+      "error": null
+    },
+    {
+      "station_id": "70296026410",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/70296026410.csv",
+      "error": null
+    },
+    {
+      "station_id": "72324013882",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72324013882.csv",
+      "error": null
+    },
+    {
+      "station_id": "72401693736",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72401693736.csv",
+      "error": null
+    },
+    {
+      "station_id": "72208013880",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72208013880.csv",
+      "error": null
+    },
+    {
+      "station_id": "72545014990",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72545014990.csv",
+      "error": null
+    },
+    {
+      "station_id": "72734404869",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72734404869.csv",
+      "error": null
+    },
+    {
+      "station_id": "72417503802",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72417503802.csv",
+      "error": null
+    },
+    {
+      "station_id": "72524014820",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72524014820.csv",
+      "error": null
+    },
+    {
+      "station_id": "74746003904",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/74746003904.csv",
+      "error": null
+    },
+    {
+      "station_id": "72314013881",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72314013881.csv",
+      "error": null
+    },
+    {
+      "station_id": "72428014821",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72428014821.csv",
+      "error": null
+    },
+    {
+      "station_id": "72531594870",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72531594870.csv",
+      "error": null
+    },
+    {
+      "station_id": "72744014858",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72744014858.csv",
+      "error": null
+    },
+    {
+      "station_id": "72477693075",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72477693075.csv",
+      "error": null
+    },
+    {
+      "station_id": "72670024045",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72670024045.csv",
+      "error": null
+    },
+    {
+      "station_id": "72466093037",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72466093037.csv",
+      "error": null
+    },
+    {
+      "station_id": "72445003945",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72445003945.csv",
+      "error": null
+    },
+    {
+      "station_id": "72569024089",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72569024089.csv",
+      "error": null
+    },
+    {
+      "station_id": "72251012924",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72251012924.csv",
+      "error": null
+    },
+    {
+      "station_id": "72414013866",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72414013866.csv",
+      "error": null
+    },
+    {
+      "station_id": "72225593842",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72225593842.csv",
+      "error": null
+    },
+    {
+      "station_id": "72421093814",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72421093814.csv",
+      "error": null
+    },
+    {
+      "station_id": "72646594890",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72646594890.csv",
+      "error": null
+    },
+    {
+      "station_id": "72564024018",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72564024018.csv",
+      "error": null
+    },
+    {
+      "station_id": "74787012834",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/74787012834.csv",
+      "error": null
+    },
+    {
+      "station_id": "72258013960",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72258013960.csv",
+      "error": null
+    },
+    {
+      "station_id": "72429093815",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72429093815.csv",
+      "error": null
+    },
+    {
+      "station_id": "72405013743",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72405013743.csv",
+      "error": null
+    },
+    {
+      "station_id": "72451013985",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72451013985.csv",
+      "error": null
+    },
+    {
+      "station_id": "72531603887",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72531603887.csv",
+      "error": null
+    },
+    {
+      "station_id": "72565003017",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72565003017.csv",
+      "error": null
+    },
+    {
+      "station_id": "72259003927",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72259003927.csv",
+      "error": null
+    },
+    {
+      "station_id": "72226813839",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72226813839.csv",
+      "error": null
+    },
+    {
+      "station_id": "72763024012",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72763024012.csv",
+      "error": null
+    },
+    {
+      "station_id": "70321025513",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/70321025513.csv",
+      "error": null
+    },
+    {
+      "station_id": "72745014913",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72745014913.csv",
+      "error": null
+    },
+    {
+      "station_id": "72462593005",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72462593005.csv",
+      "error": null
+    },
+    {
+      "station_id": "72546014933",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72546014933.csv",
+      "error": null
+    },
+    {
+      "station_id": "72537094847",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72537094847.csv",
+      "error": null
+    },
+    {
+      "station_id": "72757394928",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72757394928.csv",
+      "error": null
+    },
+    {
+      "station_id": "72073573805",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72073573805.csv",
+      "error": null
+    },
+    {
+      "station_id": "72467523063",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72467523063.csv",
+      "error": null
+    },
+    {
+      "station_id": "72582524121",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72582524121.csv",
+      "error": null
+    },
+    {
+      "station_id": "72515614748",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72515614748.csv",
+      "error": null
+    },
+    {
+      "station_id": "72270023044",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72270023044.csv",
+      "error": null
+    },
+    {
+      "station_id": "72648094853",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72648094853.csv",
+      "error": null
+    },
+    {
+      "station_id": "72693024221",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72693024221.csv",
+      "error": null
+    },
+    {
+      "station_id": "72432093817",
+      "year": 2024,
+      "status": "cached",
+      "rows": -1,
+      "path": "data/weather/raw/2024/72432093817.csv",
+      "error": null
+    },
+    {
+      "station_id": "72309593719",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72309593719.csv",
+      "error": null
+    },
+    {
+      "station_id": "72502014734",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72502014734.csv",
+      "error": null
+    },
+    {
+      "station_id": "72201012836",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72201012836.csv",
+      "error": null
+    },
+    {
+      "station_id": "70261026411",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/70261026411.csv",
+      "error": null
+    },
+    {
+      "station_id": "72753014914",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72753014914.csv",
+      "error": null
+    },
+    {
+      "station_id": "72389093193",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72389093193.csv",
+      "error": null
+    },
+    {
+      "station_id": "72303593740",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72303593740.csv",
+      "error": null
+    },
+    {
+      "station_id": "72779024146",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72779024146.csv",
+      "error": null
+    },
+    {
+      "station_id": "72375003103",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72375003103.csv",
+      "error": null
+    },
+    {
+      "station_id": "74783012849",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/74783012849.csv",
+      "error": null
+    },
+    {
+      "station_id": "72637014826",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72637014826.csv",
+      "error": null
+    },
+    {
+      "station_id": "72549094933",
+      "year": 2024,
+      "status": "ok",
+      "rows": 329,
+      "path": "data/weather/raw/2024/72549094933.csv",
+      "error": null
+    },
+    {
+      "station_id": "72651014944",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72651014944.csv",
+      "error": null
+    },
+    {
+      "station_id": "72344013964",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72344013964.csv",
+      "error": null
+    },
+    {
+      "station_id": "72533014827",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72533014827.csv",
+      "error": null
+    },
+    {
+      "station_id": "72665094023",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72665094023.csv",
+      "error": null
+    },
+    {
+      "station_id": "72451523064",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72451523064.csv",
+      "error": null
+    },
+    {
+      "station_id": "72785024157",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72785024157.csv",
+      "error": null
+    },
+    {
+      "station_id": "72757014916",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72757014916.csv",
+      "error": null
+    },
+    {
+      "station_id": "72247003901",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72247003901.csv",
+      "error": null
+    },
+    {
+      "station_id": "72476023066",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72476023066.csv",
+      "error": null
+    },
+    {
+      "station_id": "74756012816",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/74756012816.csv",
+      "error": null
+    },
+    {
+      "station_id": "74757093874",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/74757093874.csv",
+      "error": null
+    },
+    {
+      "station_id": "72645014898",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72645014898.csv",
+      "error": null
+    },
+    {
+      "station_id": "72552014935",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72552014935.csv",
+      "error": null
+    },
+    {
+      "station_id": "72257603902",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72257603902.csv",
+      "error": null
+    },
+    {
+      "station_id": "72635094860",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72635094860.csv",
+      "error": null
+    },
+    {
+      "station_id": "72317013723",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72317013723.csv",
+      "error": null
+    },
+    {
+      "station_id": "72312003870",
+      "year": 2024,
+      "status": "ok",
+      "rows": 364,
+      "path": "data/weather/raw/2024/72312003870.csv",
+      "error": null
+    },
+    {
+      "station_id": "70367025322",
+      "year": 2024,
+      "status": "ok",
+      "rows": 254,
+      "path": "data/weather/raw/2024/70367025322.csv",
+      "error": null
+    },
+    {
+      "station_id": "72775024143",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72775024143.csv",
+      "error": null
+    },
+    {
+      "station_id": "72330753893",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72330753893.csv",
+      "error": null
+    },
+    {
+      "station_id": "72467793007",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72467793007.csv",
+      "error": null
+    },
+    {
+      "station_id": "91212041415",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/91212041415.csv",
+      "error": null
+    },
+    {
+      "station_id": "72571094025",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72571094025.csv",
+      "error": null
+    },
+    {
+      "station_id": "72406693706",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72406693706.csv",
+      "error": null
+    },
+    {
+      "station_id": "72012063837",
+      "year": 2024,
+      "status": "ok",
+      "rows": 364,
+      "path": "data/weather/raw/2024/72012063837.csv",
+      "error": null
+    },
+    {
+      "station_id": "72745594931",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72745594931.csv",
+      "error": null
+    },
+    {
+      "station_id": "72772024144",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72772024144.csv",
+      "error": null
+    },
+    {
+      "station_id": "91182022521",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/91182022521.csv",
+      "error": null
+    },
+    {
+      "station_id": "72268893034",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72268893034.csv",
+      "error": null
+    },
+    {
+      "station_id": "72244012918",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72244012918.csv",
+      "error": null
+    },
+    {
+      "station_id": "72503794745",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72503794745.csv",
+      "error": null
+    },
+    {
+      "station_id": "72250512904",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72250512904.csv",
+      "error": null
+    },
+    {
+      "station_id": "72323003856",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72323003856.csv",
+      "error": null
+    },
+    {
+      "station_id": "72425003860",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72425003860.csv",
+      "error": null
+    },
+    {
+      "station_id": "72506794720",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72506794720.csv",
+      "error": null
+    },
+    {
+      "station_id": "72451803968",
+      "year": 2024,
+      "status": "ok",
+      "rows": 362,
+      "path": "data/weather/raw/2024/72451803968.csv",
+      "error": null
+    },
+    {
+      "station_id": "72403093738",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72403093738.csv",
+      "error": null
+    },
+    {
+      "station_id": "72528704724",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72528704724.csv",
+      "error": null
+    },
+    {
+      "station_id": "72243012960",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72243012960.csv",
+      "error": null
+    },
+    {
+      "station_id": "72450003928",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72450003928.csv",
+      "error": null
+    },
+    {
+      "station_id": "72578524145",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72578524145.csv",
+      "error": null
+    },
+    {
+      "station_id": "72302013748",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72302013748.csv",
+      "error": null
+    },
+    {
+      "station_id": "72743794893",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72743794893.csv",
+      "error": null
+    },
+    {
+      "station_id": "72438093819",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72438093819.csv",
+      "error": null
+    },
+    {
+      "station_id": "72747014918",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72747014918.csv",
+      "error": null
+    },
+    {
+      "station_id": "72505004781",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72505004781.csv",
+      "error": null
+    },
+    {
+      "station_id": "72515594761",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72515594761.csv",
+      "error": null
+    },
+    {
+      "station_id": "91285021504",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/91285021504.csv",
+      "error": null
+    },
+    {
+      "station_id": "72577624166",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72577624166.csv",
+      "error": null
+    },
+    {
+      "station_id": "72235003940",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72235003940.csv",
+      "error": null
+    },
+    {
+      "station_id": "72206013889",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72206013889.csv",
+      "error": null
+    },
+    {
+      "station_id": "74486094789",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/74486094789.csv",
+      "error": null
+    },
+    {
+      "station_id": "72349513987",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72349513987.csv",
+      "error": null
+    },
+    {
+      "station_id": "72753514919",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72753514919.csv",
+      "error": null
+    },
+    {
+      "station_id": "70381025309",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/70381025309.csv",
+      "error": null
+    },
+    {
+      "station_id": "72512704726",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72512704726.csv",
+      "error": null
+    },
+    {
+      "station_id": "91197521510",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/91197521510.csv",
+      "error": null
+    },
+    {
+      "station_id": "70395025325",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/70395025325.csv",
+      "error": null
+    },
+    {
+      "station_id": "72539014836",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72539014836.csv",
+      "error": null
+    },
+    {
+      "station_id": "72564524022",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72564524022.csv",
+      "error": null
+    },
+    {
+      "station_id": "72386023169",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72386023169.csv",
+      "error": null
+    },
+    {
+      "station_id": "72357503950",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72357503950.csv",
+      "error": null
+    },
+    {
+      "station_id": "72295023174",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72295023174.csv",
+      "error": null
+    },
+    {
+      "station_id": "72267023042",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72267023042.csv",
+      "error": null
+    },
+    {
+      "station_id": "72520754735",
+      "year": 2024,
+      "status": "ok",
+      "rows": 364,
+      "path": "data/weather/raw/2024/72520754735.csv",
+      "error": null
+    },
+    {
+      "station_id": "72562024023",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72562024023.csv",
+      "error": null
+    },
+    {
+      "station_id": "72451623020",
+      "year": 2024,
+      "status": "ok",
+      "rows": 318,
+      "path": "data/weather/raw/2024/72451623020.csv",
+      "error": null
+    },
+    {
+      "station_id": "72240003937",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72240003937.csv",
+      "error": null
+    },
+    {
+      "station_id": "72428513812",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72428513812.csv",
+      "error": null
+    },
+    {
+      "station_id": "72422093820",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72422093820.csv",
+      "error": null
+    },
+    {
+      "station_id": "72240513976",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72240513976.csv",
+      "error": null
+    },
+    {
+      "station_id": "72503014732",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72503014732.csv",
+      "error": null
+    },
+    {
+      "station_id": "72297023129",
+      "year": 2024,
+      "status": "ok",
+      "rows": 362,
+      "path": "data/weather/raw/2024/72297023129.csv",
+      "error": null
+    },
+    {
+      "station_id": "91165022536",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/91165022536.csv",
+      "error": null
+    },
+    {
+      "station_id": "72340313963",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72340313963.csv",
+      "error": null
+    },
+    {
+      "station_id": "72551014939",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72551014939.csv",
+      "error": null
+    },
+    {
+      "station_id": "72252012907",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72252012907.csv",
+      "error": null
+    },
+    {
+      "station_id": "72643014920",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72643014920.csv",
+      "error": null
+    },
+    {
+      "station_id": "72783024149",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72783024149.csv",
+      "error": null
+    },
+    {
+      "station_id": "72265023023",
+      "year": 2024,
+      "status": "ok",
+      "rows": 361,
+      "path": "data/weather/raw/2024/72265023023.csv",
+      "error": null
+    },
+    {
+      "station_id": "72637914845",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72637914845.csv",
+      "error": null
+    },
+    {
+      "station_id": "72446003947",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72446003947.csv",
+      "error": null
+    },
+    {
+      "station_id": "72205012815",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72205012815.csv",
+      "error": null
+    },
+    {
+      "station_id": "72548514940",
+      "year": 2024,
+      "status": "ok",
+      "rows": 360,
+      "path": "data/weather/raw/2024/72548514940.csv",
+      "error": null
+    },
+    {
+      "station_id": "72399014711",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72399014711.csv",
+      "error": null
+    },
+    {
+      "station_id": "72534014819",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72534014819.csv",
+      "error": null
+    },
+    {
+      "station_id": "72234013865",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72234013865.csv",
+      "error": null
+    },
+    {
+      "station_id": "72334013893",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72334013893.csv",
+      "error": null
+    },
+    {
+      "station_id": "72250612959",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72250612959.csv",
+      "error": null
+    },
+    {
+      "station_id": "72597024225",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72597024225.csv",
+      "error": null
+    },
+    {
+      "station_id": "72226013895",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72226013895.csv",
+      "error": null
+    },
+    {
+      "station_id": "72455503936",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72455503936.csv",
+      "error": null
+    },
+    {
+      "station_id": "74394514710",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/74394514710.csv",
+      "error": null
+    },
+    {
+      "station_id": "72202012839",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72202012839.csv",
+      "error": null
+    },
+    {
+      "station_id": "72640014839",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72640014839.csv",
+      "error": null
+    },
+    {
+      "station_id": "72204012838",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72204012838.csv",
+      "error": null
+    },
+    {
+      "station_id": "72544014923",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72544014923.csv",
+      "error": null
+    },
+    {
+      "station_id": "72248613942",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72248613942.csv",
+      "error": null
+    },
+    {
+      "station_id": "72223013894",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72223013894.csv",
+      "error": null
+    },
+    {
+      "station_id": "72767624013",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72767624013.csv",
+      "error": null
+    },
+    {
+      "station_id": "72628494836",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72628494836.csv",
+      "error": null
+    },
+    {
+      "station_id": "72491523259",
+      "year": 2024,
+      "status": "ok",
+      "rows": 364,
+      "path": "data/weather/raw/2024/72491523259.csv",
+      "error": null
+    },
+    {
+      "station_id": "72641014837",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72641014837.csv",
+      "error": null
+    },
+    {
+      "station_id": "72773024153",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72773024153.csv",
+      "error": null
+    },
+    {
+      "station_id": "72658014922",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72658014922.csv",
+      "error": null
+    },
+    {
+      "station_id": "72231012916",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72231012916.csv",
+      "error": null
+    },
+    {
+      "station_id": "72476593013",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72476593013.csv",
+      "error": null
+    },
+    {
+      "station_id": "72506694724",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72506694724.csv",
+      "error": null
+    },
+    {
+      "station_id": "74791013717",
+      "year": 2024,
+      "status": "ok",
+      "rows": 364,
+      "path": "data/weather/raw/2024/74791013717.csv",
+      "error": null
+    },
+    {
+      "station_id": "72306993753",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72306993753.csv",
+      "error": null
+    },
+    {
+      "station_id": "72493023230",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72493023230.csv",
+      "error": null
+    },
+    {
+      "station_id": "91190022516",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/91190022516.csv",
+      "error": null
+    },
+    {
+      "station_id": "72353013967",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72353013967.csv",
+      "error": null
+    },
+    {
+      "station_id": "72550014942",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72550014942.csv",
+      "error": null
+    },
+    {
+      "station_id": "70200026617",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/70200026617.csv",
+      "error": null
+    },
+    {
+      "station_id": "74704003102",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/74704003102.csv",
+      "error": null
+    },
+    {
+      "station_id": "72530094846",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72530094846.csv",
+      "error": null
+    },
+    {
+      "station_id": "72308013737",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72308013737.csv",
+      "error": null
+    },
+    {
+      "station_id": "72510094746",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72510094746.csv",
+      "error": null
+    },
+    {
+      "station_id": "72691724284",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72691724284.csv",
+      "error": null
+    },
+    {
+      "station_id": "70133026616",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/70133026616.csv",
+      "error": null
+    },
+    {
+      "station_id": "72793724222",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72793724222.csv",
+      "error": null
+    },
+    {
+      "station_id": "72622564776",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72622564776.csv",
+      "error": null
+    },
+    {
+      "station_id": "72203012844",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72203012844.csv",
+      "error": null
+    },
+    {
+      "station_id": "72698024229",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72698024229.csv",
+      "error": null
+    },
+    {
+      "station_id": "72203412812",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72203412812.csv",
+      "error": null
+    },
+    {
+      "station_id": "72408013739",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72408013739.csv",
+      "error": null
+    },
+    {
+      "station_id": "72278023183",
+      "year": 2024,
+      "status": "ok",
+      "rows": 354,
+      "path": "data/weather/raw/2024/72278023183.csv",
+      "error": null
+    },
+    {
+      "station_id": "72532014842",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72532014842.csv",
+      "error": null
+    },
+    {
+      "station_id": "72234853808",
+      "year": 2024,
+      "status": "ok",
+      "rows": 359,
+      "path": "data/weather/raw/2024/72234853808.csv",
+      "error": null
+    },
+    {
+      "station_id": "72211612873",
+      "year": 2024,
+      "status": "ok",
+      "rows": 360,
+      "path": "data/weather/raw/2024/72211612873.csv",
+      "error": null
+    },
+    {
+      "station_id": "72578024156",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72578024156.csv",
+      "error": null
+    },
+    {
+      "station_id": "72520094823",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72520094823.csv",
+      "error": null
+    },
+    {
+      "station_id": "72734714841",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72734714841.csv",
+      "error": null
+    },
+    {
+      "station_id": "72222313899",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72222313899.csv",
+      "error": null
+    },
+    {
+      "station_id": "91765061705",
+      "year": 2024,
+      "status": "ok",
+      "rows": 361,
+      "path": "data/weather/raw/2024/91765061705.csv",
+      "error": null
+    },
+    {
+      "station_id": "72372323184",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72372323184.csv",
+      "error": null
+    },
+    {
+      "station_id": "72784524163",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72784524163.csv",
+      "error": null
+    },
+    {
+      "station_id": "78520300398",
+      "year": 2024,
+      "status": "ok",
+      "rows": 359,
+      "path": "data/weather/raw/2024/78520300398.csv",
+      "error": null
+    },
+    {
+      "station_id": "70386025329",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/70386025329.csv",
+      "error": null
+    },
+    {
+      "station_id": "72605504743",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72605504743.csv",
+      "error": null
+    },
+    {
+      "station_id": "72286893138",
+      "year": 2024,
+      "status": "ok",
+      "rows": 358,
+      "path": "data/weather/raw/2024/72286893138.csv",
+      "error": null
+    },
+    {
+      "station_id": "72507014765",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72507014765.csv",
+      "error": null
+    },
+    {
+      "station_id": "72572424174",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72572424174.csv",
+      "error": null
+    },
+    {
+      "station_id": "72606014764",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72606014764.csv",
+      "error": null
+    },
+    {
+      "station_id": "72662024090",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72662024090.csv",
+      "error": null
+    },
+    {
+      "station_id": "72592024257",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72592024257.csv",
+      "error": null
+    },
+    {
+      "station_id": "72692024230",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72692024230.csv",
+      "error": null
+    },
+    {
+      "station_id": "72306013722",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72306013722.csv",
+      "error": null
+    },
+    {
+      "station_id": "72543094822",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72543094822.csv",
+      "error": null
+    },
+    {
+      "station_id": "72741504803",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72741504803.csv",
+      "error": null
+    },
+    {
+      "station_id": "72401013740",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72401013740.csv",
+      "error": null
+    },
+    {
+      "station_id": "72672024061",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72672024061.csv",
+      "error": null
+    },
+    {
+      "station_id": "72574424027",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72574424027.csv",
+      "error": null
+    },
+    {
+      "station_id": "72488023185",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72488023185.csv",
+      "error": null
+    },
+    {
+      "station_id": "72411013741",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72411013741.csv",
+      "error": null
+    },
+    {
+      "station_id": "72529014768",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72529014768.csv",
+      "error": null
+    },
+    {
+      "station_id": "72268023009",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72268023009.csv",
+      "error": null
+    },
+    {
+      "station_id": "72644014925",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72644014925.csv",
+      "error": null
+    },
+    {
+      "station_id": "72210812894",
+      "year": 2024,
+      "status": "ok",
+      "rows": 326,
+      "path": "data/weather/raw/2024/72210812894.csv",
+      "error": null
+    },
+    {
+      "station_id": "72365623049",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72365623049.csv",
+      "error": null
+    },
+    {
+      "station_id": "72290023188",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72290023188.csv",
+      "error": null
+    },
+    {
+      "station_id": "72253012921",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72253012921.csv",
+      "error": null
+    },
+    {
+      "station_id": "72207003822",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72207003822.csv",
+      "error": null
+    },
+    {
+      "station_id": "72392523190",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72392523190.csv",
+      "error": null
+    },
+    {
+      "station_id": "72535014848",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72535014848.csv",
+      "error": null
+    },
+    {
+      "station_id": "72289793206",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72289793206.csv",
+      "error": null
+    },
+    {
+      "station_id": "70063727406",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/70063727406.csv",
+      "error": null
+    },
+    {
+      "station_id": "72512854739",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72512854739.csv",
+      "error": null
+    },
+    {
+      "station_id": "72492023237",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72492023237.csv",
+      "error": null
+    },
+    {
+      "station_id": "72423093821",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72423093821.csv",
+      "error": null
+    },
+    {
+      "station_id": "72793024233",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72793024233.csv",
+      "error": null
+    },
+    {
+      "station_id": "72205712854",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72205712854.csv",
+      "error": null
+    },
+    {
+      "station_id": "72494023234",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72494023234.csv",
+      "error": null
+    },
+    {
+      "station_id": "72440013995",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72440013995.csv",
+      "error": null
+    },
+    {
+      "station_id": "72475423186",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72475423186.csv",
+      "error": null
+    },
+    {
+      "station_id": "72666024029",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72666024029.csv",
+      "error": null
+    },
+    {
+      "station_id": "72248013957",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72248013957.csv",
+      "error": null
+    },
+    {
+      "station_id": "70371025333",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/70371025333.csv",
+      "error": null
+    },
+    {
+      "station_id": "72494523293",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72494523293.csv",
+      "error": null
+    },
+    {
+      "station_id": "72263023034",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72263023034.csv",
+      "error": null
+    },
+    {
+      "station_id": "78526011641",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/78526011641.csv",
+      "error": null
+    },
+    {
+      "station_id": "72572024127",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72572024127.csv",
+      "error": null
+    },
+    {
+      "station_id": "72458603919",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72458603919.csv",
+      "error": null
+    },
+    {
+      "station_id": "72483993225",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72483993225.csv",
+      "error": null
+    },
+    {
+      "station_id": "72394023273",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72394023273.csv",
+      "error": null
+    },
+    {
+      "station_id": "72297793184",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72297793184.csv",
+      "error": null
+    },
+    {
+      "station_id": "72439093822",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72439093822.csv",
+      "error": null
+    },
+    {
+      "station_id": "72351013966",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72351013966.csv",
+      "error": null
+    },
+    {
+      "station_id": "72211512871",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72211512871.csv",
+      "error": null
+    },
+    {
+      "station_id": "72655014926",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72655014926.csv",
+      "error": null
+    },
+    {
+      "station_id": "72434013994",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72434013994.csv",
+      "error": null
+    },
+    {
+      "station_id": "72495723213",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72495723213.csv",
+      "error": null
+    },
+    {
+      "station_id": "78543011640",
+      "year": 2024,
+      "status": "ok",
+      "rows": 303,
+      "path": "data/weather/raw/2024/78543011640.csv",
+      "error": null
+    },
+    {
+      "station_id": "78551011624",
+      "year": 2024,
+      "status": "ok",
+      "rows": 329,
+      "path": "data/weather/raw/2024/78551011624.csv",
+      "error": null
+    },
+    {
+      "station_id": "72586594161",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72586594161.csv",
+      "error": null
+    },
+    {
+      "station_id": "72557014943",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72557014943.csv",
+      "error": null
+    },
+    {
+      "station_id": "72503814714",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72503814714.csv",
+      "error": null
+    },
+    {
+      "station_id": "72354503965",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72354503965.csv",
+      "error": null
+    },
+    {
+      "station_id": "72519014771",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72519014771.csv",
+      "error": null
+    },
+    {
+      "station_id": "72214093805",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72214093805.csv",
+      "error": null
+    },
+    {
+      "station_id": "72536094830",
+      "year": 2024,
+      "status": "ok",
+      "rows": 362,
+      "path": "data/weather/raw/2024/72536094830.csv",
+      "error": null
+    },
+    {
+      "station_id": "72211012842",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72211012842.csv",
+      "error": null
+    },
+    {
+      "station_id": "72335013877",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72335013877.csv",
+      "error": null
+    },
+    {
+      "station_id": "72409514792",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72409514792.csv",
+      "error": null
+    },
+    {
+      "station_id": "72356013968",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72356013968.csv",
+      "error": null
+    },
+    {
+      "station_id": "72274023160",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72274023160.csv",
+      "error": null
+    },
+    {
+      "station_id": "72638714850",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72638714850.csv",
+      "error": null
+    },
+    {
+      "station_id": "72586694178",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72586694178.csv",
+      "error": null
+    },
+    {
+      "station_id": "72341813977",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72341813977.csv",
+      "error": null
+    },
+    {
+      "station_id": "72244813972",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72244813972.csv",
+      "error": null
+    },
+    {
+      "station_id": "72326013891",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72326013891.csv",
+      "error": null
+    },
+    {
+      "station_id": "72213263801",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72213263801.csv",
+      "error": null
+    },
+    {
+      "station_id": "72255012912",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72255012912.csv",
+      "error": null
+    },
+    {
+      "station_id": "72570594030",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72570594030.csv",
+      "error": null
+    },
+    {
+      "station_id": "72216693845",
+      "year": 2024,
+      "status": "ok",
+      "rows": 364,
+      "path": "data/weather/raw/2024/72216693845.csv",
+      "error": null
+    },
+    {
+      "station_id": "72221013858",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/72221013858.csv",
+      "error": null
+    },
+    {
+      "station_id": "70387025338",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/70387025338.csv",
+      "error": null
+    },
+    {
+      "station_id": "72676494163",
+      "year": 2024,
+      "status": "ok",
+      "rows": 190,
+      "path": "data/weather/raw/2024/72676494163.csv",
+      "error": null
+    },
+    {
+      "station_id": "72343653922",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72343653922.csv",
+      "error": null
+    },
+    {
+      "station_id": "72086800294",
+      "year": 2024,
+      "status": "ok",
+      "rows": 366,
+      "path": "data/weather/raw/2024/72086800294.csv",
+      "error": null
+    },
+    {
+      "station_id": "70361025339",
+      "year": 2024,
+      "status": "ok",
+      "rows": 365,
+      "path": "data/weather/raw/2024/70361025339.csv",
+      "error": null
+    },
+    {
+      "station_id": "74003503145",
+      "year": 2024,
+      "status": "ok",
+      "rows": 360,
+      "path": "data/weather/raw/2024/74003503145.csv",
+      "error": null
+    }
+  ]
+}
