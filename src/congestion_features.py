@@ -102,6 +102,7 @@ __all__ = [
     "WINDOW_3H",
     "INPUT_COLS",
     "OUTPUT_FEATURES",
+    "CONGESTION_POPULATION_NOTE",
     "build_airport_index",
     "compute_trailing_count",
     "compute_congestion_features",
@@ -115,6 +116,28 @@ __all__ = [
 #: Trailing window widths as numpy timedelta64 (us resolution to match pandas 3.x).
 WINDOW_1H: np.timedelta64 = np.timedelta64(1, "h")
 WINDOW_3H: np.timedelta64 = np.timedelta64(3, "h")
+
+#: Population note — important for correct interpretation of congestion counts.
+#:
+#: The congestion index is built from ``flights_rotation_eligible.csv``, which is
+#: the **strict rotation-eligible cohort** — not all BTS-scheduled flights.
+#: For the four months covered (January, June, July, August 2024), this cohort
+#: captures approximately 94–97% of BTS source records.  The missing 3–6% consists
+#: of confirmed cancelled flights (~3–4%) and confirmed diverted flights (~0.3%).
+#: Cancelled flights do not consume runway capacity in the same way as operating
+#: flights, so their exclusion causes a small downward bias in congestion counts.
+#:
+#: Consequence: ``dep_count_origin_1h`` and related features count rotation-eligible
+#: departures/arrivals, NOT total airport scheduled movements.  For the available
+#: months the difference is small (~3–6%) but should be noted when interpreting
+#: congestion as a proxy for total airport load.
+#:
+#: A broader background population (``flights_sensitivity_eligible.csv`` or raw BTS)
+#: is not available on disk and cannot be used without re-downloading raw data.
+CONGESTION_POPULATION_NOTE: str = (
+    "rotation_eligible_cohort: ~94-97% of BTS source flights for Jan/Jun/Jul/Aug 2024; "
+    "excludes cancelled (~3-4%) and confirmed diverted (~0.3%) flights"
+)
 
 #: Columns loaded from the source CSV (minimises memory).
 INPUT_COLS: list[str] = [

@@ -23,26 +23,45 @@ Stage 3 — Feature generation (``build_weather_features``)
     strategy described below.  Outputs ``data/processed/weather_features.csv``
     with one row per flight_id.
 
-Prediction-time design (prior-day lag)
----------------------------------------
-GSOD provides daily summaries — averages and totals computed over the
-entire local calendar day.  A GSOD row for 2024-08-01 at ATL includes
-observations from every hour of that day, including hours after most
-morning flights have departed.  Using same-day GSOD for a 07:00 departure
-would silently include post-departure observations (future information).
+Prediction-time design (prior-day lag) — RETROSPECTIVE STUDY
+--------------------------------------------------------------
+⚠️  IMPORTANT: This pipeline is designed for **retrospective research analysis**,
+not for a real-time prediction system.  The distinction matters:
+
+For retrospective analysis (this study):
+    We downloaded historical GSOD data in November 2026 for 2024 flights.
+    We know what the weather was on July 31, 2024 when studying August 1, 2024
+    flights.  No data-snooping occurs because we use the *prior* day's summary,
+    not the same day.
+
+For a real-time prediction system (NOT this study):
+    The NCEI GSOD documentation states: *"The latest daily summary data are
+    normally available a few days after the date-time of the observations used
+    in the daily summaries."*  This means that for a system predicting delays
+    on August 1, 2024 at 06:00 local time, the GSOD summary for July 31 would
+    typically not yet be published in the NCEI database.  GSOD features are
+    therefore NOT suitable for real-time deployment without an alternative
+    data source or confirmed availability guarantees.
+
+Why prior-day, not same-day:
+    GSOD provides daily summaries — averages and totals computed over the
+    entire GMT calendar day (00:00Z–23:59Z).  A GSOD row for 2024-08-01 at
+    ATL includes observations from every hour of that day, including hours
+    after most morning flights have departed.  Using same-day GSOD for a
+    07:00 departure would silently include post-departure observations
+    (future information).
 
 This pipeline joins on:
 
     weather_date = flight_date − 1 day
 
-The prior day's summary was finalized at midnight and was fully available
-before any departure on ``flight_date``.  Features carry the suffix ``_prev``
+The prior day's observations are complete (ended at 23:59Z) before any
+departure begins on ``flight_date``.  Features carry the suffix ``_prev``
 (e.g., ``temp_c_prev``) to make the lag explicit.
 
-This is a deliberate and documented design choice — not a workaround.
 Weather is strongly autocorrelated: yesterday's temperature, visibility, and
 precipitation at an airport is a valid and causally reasonable predictor of
-today's operational conditions.
+today's operational conditions for a retrospective study.
 
 Join key
 --------
@@ -63,13 +82,16 @@ temp_c_prev         Mean air temperature, °C (converted from °F)
 dewp_c_prev         Mean dew point, °C
 visibility_km_prev  Mean visibility, km (converted from miles)
 wind_ms_prev        Mean wind speed, m/s (converted from knots)
-gust_ms_prev        Maximum wind gust, m/s (999.9 sentinel → NA)
+gust_ms_prev        Maximum wind gust, m/s (999.9 sentinel → NA; see GUST note)
 prcp_mm_prev        Total precipitation, mm (converted from inches)
 
 GSOD missing-value sentinels replaced with NaN before conversion:
   TEMP, DEWP, MAX, MIN  → 9999.9
   VISIB, WDSP, MXSPD, GUST, SNDP → 999.9
   PRCP → 99.99
+
+GUST NOTE: 999.9 means "not reported / insufficient data" per official NCEI
+GSOD documentation.  It does NOT mean "no gust occurred."  Do not impute as 0.
 
 Unit conversions:
   °F → °C  : (x − 32) × 5/9
@@ -103,6 +125,7 @@ __all__ = [
     "GSOD_BASE_URL",
     "GSOD_SENTINELS",
     "WEATHER_FEATURES",
+    "RETROSPECTIVE_ONLY",
     "station_id_str",
     "gsod_url",
     "download_one_station",
@@ -122,6 +145,13 @@ logger = logging.getLogger(__name__)
 GSOD_BASE_URL: str = (
     "https://www.ncei.noaa.gov/data/global-summary-of-the-day/access"
 )
+
+#: Explicit flag: GSOD prior-day features are valid for RETROSPECTIVE RESEARCH only.
+#: Per NCEI GSOD documentation readme.txt: "The latest daily summary data are normally
+#: available a few days after the date-time of the observations used in the daily
+#: summaries."  This means prior-day GSOD is NOT available in real-time for a production
+#: prediction system.  This module is designed for retrospective research analysis only.
+RETROSPECTIVE_ONLY: bool = True
 
 #: Missing-value sentinels in GSOD CSVs → replace with NaN.
 GSOD_SENTINELS: dict[str, float] = {
@@ -453,15 +483,21 @@ def build_weather_features(
 ) -> dict[str, Any]:
     """Join prior-day GSOD weather onto flight records.
 
-    Join strategy (prior-day lag — leakage-free)
-    ---------------------------------------------
+    ⚠️  RETROSPECTIVE ANALYSIS ONLY — see module-level RETROSPECTIVE_ONLY flag.
+    NCEI GSOD data is published "a few days after" observations, NOT in real-time.
+    These features are suitable for retrospective research only.
+
+    Join strategy (prior-day lag)
+    -----------------------------
     For each flight with ``flight_date`` at ``origin``:
 
         weather_date = flight_date − 1 day
 
-    The GSOD summary for ``weather_date`` was finalized at midnight before
-    the flight's ``flight_date`` and is therefore fully available at any
-    reasonable prediction time.
+    The prior day's GSOD summary covers observations from 00:00Z–23:59Z on
+    ``weather_date``.  All observations in that summary completed before any
+    departure on ``flight_date``, so no post-departure data enters the features.
+    However, the summary itself is published ~3 days later; this function is
+    intended for retrospective analysis only, not real-time prediction.
 
     Join key: ``(iata, DATE)`` where ``DATE == weather_date``.
 
@@ -486,6 +522,23 @@ def build_weather_features(
     dict
         Coverage and quality summary.
     """
+    # ⚠️  RETROSPECTIVE ANALYSIS ONLY — runtime guard
+    # NCEI GSOD data is "normally available a few days after" observations
+    # (see NCEI GSOD readme.txt).  These features MUST NOT be used to train
+    # or evaluate a real-time prediction model.  They are valid only for
+    # retrospective research analysis where historical data has been downloaded.
+    import warnings
+    warnings.warn(
+        "build_weather_features produces RETROSPECTIVE-ONLY features. "
+        "NOAA GSOD prior-day summaries are published 'a few days after' "
+        "observations (NCEI GSOD readme.txt) and are NOT available in "
+        "real-time at the time of flight departure. "
+        "These features are valid for retrospective research analysis only. "
+        "Set RETROSPECTIVE_ONLY=True to acknowledge this. "
+        "(This warning is raised every call to build_weather_features.)",
+        UserWarning,
+        stacklevel=2,
+    )
     # Load weather obs into memory (it's small: ~343 stations × 2 years × 366 days)
     obs = pd.read_csv(weather_obs_path, dtype={"station_id": str})
     obs["DATE"] = pd.to_datetime(obs["DATE"])

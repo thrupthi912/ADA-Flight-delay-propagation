@@ -50,6 +50,10 @@ These columns are included for human readability and join verification. They are
 
 All congestion features are computed from **scheduled (CRS) UTC timestamps only**. No actual departure or arrival times are used. The time window is a **trailing half-open interval** `[t − W, t)` — strictly before the reference time, never including the flight itself.
 
+**Population note:** The congestion index is built from `flights_rotation_eligible.csv` (the strict rotation-eligible cohort). For the four months covered (Jan, Jun, Jul, Aug 2024), this cohort captures **~96%** of all BTS source records. The missing ~4% is cancelled flights (~3–4%) and confirmed diverted flights (~0.3%). Cancelled flights do not depart and do not consume runway capacity, so this is a small downward bias. Features are counts of *rotation-eligible-cohort* movements, not strictly total scheduled movements.
+
+**Prediction-time safety:** ✅ All five congestion features are safe for use as predictors. They use only published airline schedule (CRS) times, which are available before departure.
+
 ### Window convention
 
 ```
@@ -146,7 +150,14 @@ The flight being evaluated is never counted in its own window. Any flight schedu
 **URL pattern:** `https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/{year}/{USAF:06d}{WBAN:05d}.csv`
 **Station map:** `data/weather/airport_station_map.csv`
 
-### ⚠️ Weather Methodology: Prior-Day Lag
+### ⚠️ Weather Features: Retrospective Analysis Only
+
+All weather features are labelled `_prev` (prior day) because they use the GSOD summary for `flight_date − 1`.
+
+**Why these are retrospective, not real-time predictors:**
+Per the official NCEI GSOD documentation: *"The latest daily summary data are normally available a few days after the date-time of the observations used in the daily summaries."* This means the prior-day GSOD file would typically not be in the NCEI database until ~3 days after the flight. These features are valid for retrospective research (which this study is) but **must not** be used as real-time predictors in a production system.
+
+**What they represent:** Yesterday's ambient weather regime at the origin airport. Valid for controlling for weather conditions in a retrospective regression model.
 
 All weather features use the GSOD daily summary for **`weather_date = flight_date − 1 day`**.
 
