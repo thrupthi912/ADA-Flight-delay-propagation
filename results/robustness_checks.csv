@@ -1,0 +1,8 @@
+experiment,n_train,n_test,core_MAE,core_RMSE,core+weather_MAE,core+weather_RMSE,core+weather+congestion_MAE,core+weather+congestion_RMSE,gain_core+weather_vs_core_MAE,ci_low_core+weather,ci_high_core+weather,gain_core+weather+congestion_vs_core+weather_MAE,ci_low_core+weather+congestion,ci_high_core+weather+congestion,core+weather+gust_MAE,core+weather+gust_RMSE,gain_core+weather+gust_vs_core+weather_MAE,ci_low_core+weather+gust,ci_high_core+weather+gust
+ground<=120,1251927,319271,12.4737,36.8091,12.427,36.7165,12.3122,36.6378,0.0467,0.032,0.0615,0.1148,0.0962,0.1332,,,,,
+ground<=180,1302931,331910,12.6392,37.3371,12.5686,37.225,12.5305,37.2155,0.0706,0.0555,0.0864,0.0381,0.0218,0.054,,,,,
+ground<=360,1360905,346562,12.9564,38.0881,12.8833,37.9353,12.8014,37.8584,0.0731,0.0563,0.0893,0.0819,0.0646,0.0994,,,,,
+ground<=720,1650134,419948,13.5346,38.8926,13.4818,38.7719,13.3965,38.6832,0.0528,0.0386,0.0689,0.0854,0.0729,0.0989,,,,,
+ground<=1440,1721796,437595,13.9692,39.367,13.8779,39.1958,13.8359,39.1867,0.0913,0.0763,0.1073,0.042,0.0271,0.0572,,,,,
+time split (test=Aug),1208966,425875,13.2227,36.9815,13.1364,36.9746,13.0298,36.8668,0.0863,0.0737,0.0985,0.1066,0.0932,0.1195,,,,,
+gust variant,1302931,331910,,,12.5686,37.225,,,,,,,,,12.573,37.2505,-0.0044,-0.0129,0.0037

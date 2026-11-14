@@ -1,0 +1,3 @@
+weather_available,MAE_core,MAE_weather,MAE_weather_cong,n,weather_gain,cong_gain
+False,15.289,14.803,14.979,1026,0.486,-0.176
+True,12.631,12.562,12.523,330884,0.069,0.039

@@ -1,0 +1,9 @@
+from,to,metric,improvement,pct,ci_low,ci_high,ci_excludes_0
+baseline_median,core,MAE,7.9891,38.7289,7.7709,8.2147,True
+baseline_median,core,RMSE,15.9086,29.8777,15.4209,16.4268,True
+core,core+weather,MAE,0.0706,0.5584,0.0552,0.0871,True
+core,core+weather,RMSE,0.1121,0.3001,0.0554,0.1755,True
+core+weather,core+weather+congestion,MAE,0.0381,0.3028,0.0215,0.0539,True
+core+weather,core+weather+congestion,RMSE,0.0095,0.0256,-0.0408,0.0621,False
+core,core+weather+congestion,MAE,0.1086,0.8595,0.0918,0.1251,True
+core,core+weather+congestion,RMSE,0.1216,0.3256,0.0618,0.1824,True
