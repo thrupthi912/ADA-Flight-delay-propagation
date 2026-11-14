@@ -1,0 +1,70 @@
+{
+  "download": {},
+  "observations": {
+    "parsed_files": 686,
+    "skipped_files": 0,
+    "total_obs_rows": 249698,
+    "duplicate_rows_removed": 0,
+    "output_path": "data/weather/weather_obs.csv"
+  },
+  "features": {
+    "total_flight_rows": 2319468,
+    "rows_written": 2319468,
+    "duplicate_flight_ids": 0,
+    "rows_missing_weather": 1886,
+    "pct_missing_weather": 0.08,
+    "missing_per_feature": {
+      "temp_c_prev": 1886,
+      "dewp_c_prev": 2020,
+      "visibility_km_prev": 1889,
+      "wind_ms_prev": 1904,
+      "gust_ms_prev": 724562,
+      "prcp_mm_prev": 7345
+    },
+    "feature_stats": {
+      "temp_c_prev": {
+        "mean": 21.147,
+        "min": -41.5,
+        "max": 41.722,
+        "p5": 0.222,
+        "p95": 32.389
+      },
+      "dewp_c_prev": {
+        "mean": 12.652,
+        "min": -38.889,
+        "max": 27.778,
+        "p5": -6.5,
+        "p95": 23.889
+      },
+      "visibility_km_prev": {
+        "mean": 15.286,
+        "min": 0.322,
+        "max": 24.623,
+        "p5": 11.426,
+        "p95": 16.093
+      },
+      "wind_ms_prev": {
+        "mean": 3.588,
+        "min": 0.0,
+        "max": 18.16,
+        "p5": 1.595,
+        "p95": 6.379
+      },
+      "gust_ms_prev": {
+        "mean": 12.411,
+        "min": 5.093,
+        "max": 40.178,
+        "p5": 8.18,
+        "p95": 19.6
+      },
+      "prcp_mm_prev": {
+        "mean": 2.96,
+        "min": 0.0,
+        "max": 280.924,
+        "p5": 0.0,
+        "p95": 17.78
+      }
+    },
+    "output_path": "data/processed/weather_features.csv"
+  }
+}

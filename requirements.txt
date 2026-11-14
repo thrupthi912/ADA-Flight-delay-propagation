@@ -8,3 +8,6 @@
 pandas>=2.0          # data loading, cleaning, timestamps
 numpy>=1.24           # numerical support (installed with pandas)
 pytest>=7.0           # preprocessing / ingestion tests
+requests>=2.28        # HTTP downloads (NOAA ISD catalog, weather data)
+networkx>=3.4         # airport network analysis (Person 3)
+matplotlib>=3.8       # network analysis visualisations (Person 3)

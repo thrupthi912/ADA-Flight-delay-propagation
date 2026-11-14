@@ -1,0 +1,18 @@
+{
+  "total_airports": 343,
+  "matched": 343,
+  "unmatched": 0,
+  "by_method": {
+    "icao_primary": 334,
+    "icao_extended": 8,
+    "geographic": 1
+  },
+  "truly_unmatched_iata": [],
+  "distance_stats": {
+    "n_geographic": 1,
+    "geographic_min_km": 63.2,
+    "geographic_max_km": 63.2,
+    "geographic_mean_km": 63.2
+  },
+  "output_path": "data/weather/airport_station_map.csv"
+}
