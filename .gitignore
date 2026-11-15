@@ -278,3 +278,4 @@ data/processed/monthly/
 # are the only additions needed.
 data/weather/weather_obs.csv
 data/weather/raw/
+.DS_Store
