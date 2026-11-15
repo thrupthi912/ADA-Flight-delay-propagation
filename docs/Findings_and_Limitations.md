@@ -2,7 +2,7 @@
 
 **Author:** Anagha Kaushik
 **Data:** Jan, Jun, Jul, Aug 2024 (the months covered by the external features)
-**Status:** draft for the author to edit. Items marked **[TEAM]** depend on pending team decisions.
+**Status:** draft for the author to edit. Team decisions confirmed 15 Nov 2026 (cutoff, recovery definition, wording, network, feature timing). Items marked **[PENDING]** await a teammate's check.
 
 > Wording rule: all results are **adjusted associations**, not causal effects. Weather is a prior-day summary and is **retrospective only**; it is not a real-time predictor.
 
@@ -15,7 +15,7 @@
 | Rotation pairs (Amulya) | 7,052,817 |
 | Valid connections | 6,645,970 |
 | Remove airport mismatch (incoming destination differs from next origin) | 6,533,629 (112,341 removed, 1.69%) |
-| Scheduled ground time <= 180 min **[TEAM]** | 4,854,175 |
+| Scheduled ground time <= 180 min | 4,854,175 |
 | In the four months with external features | **1,634,841** |
 | Matched to weather and congestion features | 1,634,841 (100%) |
 
@@ -93,7 +93,7 @@ Subgroup differences were not formally tested; treat them as descriptive pattern
 
 ## 5. Recovery
 
-**Definition [TEAM]:** late = incoming arrival delay >= 15 min; recovered = next departure delay < 15 min (against scheduled departure). Absorbed delay = incoming arrival delay minus next departure delay.
+**Definition (agreed):** late = incoming arrival delay >= 15 min; recovered = next departure delay < 15 min (against scheduled departure). Absorbed delay = incoming arrival delay minus next departure delay. Denominator = all late pairs; no delay values are missing in the analysis sample (valid pairs require actual times), so nothing is imputed.
 
 - 348,709 of 1,634,841 pairs (21.3%) have a late incoming flight. **22.0% recovered** (95% CI 21.7% to 22.3%, aircraft bootstrap, 5,742 aircraft). Median absorbed delay: 5 min (middle half -6 to 16).
 - Excluding the 283 inferred pairs: 22.01% (essentially identical).
@@ -143,14 +143,14 @@ Dhanush's edge list was independently rebuilt from the flight data: 6,367 routes
 8. Subgroup results are descriptive and untested; small subgroups are noisy.
 9. Recovery results depend on the chosen thresholds. Inferred statuses affect 283 pairs (0.017%) in this sample, but 8 other months of 2024 rely on inferred diversion status (to be verified).
 10. About 1.69% of pairs marked valid had an airport mismatch and were excluded.
-11. Amulya's baseline (MAE 16.253 vs 15.547) has **not** been reproduced [TEAM: waiting on her split].
+11. Amulya's hourly-weather baseline (MAE 16.253 vs 15.547, 4.3% gain) used a chronological split (test after 2024-10-20 13:25 UTC; 5,226,896 train / 1,306,733 test rows; cutoff and counts to be re-verified by her **[PENDING]**). That test period is outside the four months with our prior-day features, and the weather definition differs, so the two experiments are not comparable. Her weather gain (0.71 min) is about ten times ours (0.07 min); the difference is consistent with hourly pre-arrival weather carrying more information than prior-day summaries, but this was not tested.
 12. Station match for one airport (XWA) is approximate (63 km).
 
 ---
 
 ## 8. Reproduction (fill in before hand-off)
 
-- Notebook: `notebooks/` [TODO: name and clean the final notebook]
+- Notebook: `notebooks/person4_analysis.ipynb` 
 - Results: `results/` (model_comparison_bootstrap.csv, robustness_checks.csv, subgroup_*.csv, recovery_*.csv, network_top_airports.csv, figures fig1 to fig4 and network_*.png)
-- Seed: 42. Versions and commit hashes: [TODO]
+- Seed: 42.
 - Data files are not committed (too large); obtain from the team drive.

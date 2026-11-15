@@ -1,9 +1,9 @@
-# Analysis Contract: Person 4 (Anagha), v1.0
+# Analysis Contract: Person 4 (Anagha), v1.1
 
 **Project:** ADA Flight Delay Propagation
 **Author:** Anagha Kaushik
 **Last updated:** 15 Nov 2026
-**Status:** results complete; items marked **[TEAM]** still need teammate confirmation; items marked **[TODO]** are filled in at hand-off.
+**Status:** results complete; team decisions recorded in section 14 (replies received 15 Nov 2026); items marked **[PENDING]** await a teammate's check; items marked **[TODO]** are filled in at hand-off.
 
 Tags: **[CONFIRMED]** = from a teammate's document or my own verified check. **[PROPOSED]** = my choice, pending team agreement.
 
@@ -13,7 +13,7 @@ Tags: **[CONFIRMED]** = from a teammate's document or my own verified check. **[
 
 How much of an inbound flight's arrival delay is associated with the departure delay of the **next flight flown by the same aircraft**, after adjusting for operational and environmental factors (scheduled turnaround, weather, airport congestion)?
 
-**Wording rule [TEAM]:** results are **adjusted associations**, not causal effects. Dhanush's handoff says "causal association"; this report uses "adjusted association" unless the team agrees a causal design is in scope.
+**Wording rule [CONFIRMED by team reply]:** results are **adjusted associations**, not causal effects. Dhanush's handoff says "causal association"; this report uses "adjusted association" unless the team agrees a causal design is in scope.
 
 ---
 
@@ -52,7 +52,7 @@ One **aircraft rotation pair**: an incoming flight and the next flight on the sa
 
 **Network** (Dhanush): `betweenness_centrality`, `total_strength`, `pagerank`, degree and strength per airport. Used descriptively only (section 8).
 
-**Features are attached to the NEXT (outbound) flight [TEAM]:** whether to also attach the incoming flight's destination conditions is an open decision; this analysis does not.
+**Features are attached to the NEXT (outbound) flight [CONFIRMED by team reply]:** next-flight conditions are the primary setup. Incoming-destination conditions may be explored later as a separate sensitivity experiment, provided they are available at prediction time; **not run here**.
 
 ---
 
@@ -68,8 +68,9 @@ One **aircraft rotation pair**: an incoming flight and the next flight on the sa
 | Next flight in Jan, Jun, Jul, Aug 2024 | **1,634,841** | |
 | Matched to external features (natural key, `validate="many_to_one"`) | 1,634,841 (100% in every month) | 0 |
 
-- **Ground-time cutoff [TEAM]:** 180 min primary; sensitivity at 120, 360, 720, 1440 min. Amulya confirmed no upper bound exists in her validity rules, so a 5,161-minute gap can be marked valid. Rationale: beyond a few hours the aircraft has typically stayed overnight.
-- **Airport mismatches:** 112,341 pairs marked valid had incoming destination different from next origin. Of these, 56,539 involve inferred diversions and 55,802 are not diverted (real chain gaps). All excluded. Amulya informed.
+- **Ground-time cutoff [CONFIRMED by team reply]:** 180 min primary; sensitivity at 120, 360, 720, 1440 min. Amulya confirmed no upper bound exists in her validity rules, so a 5,161-minute gap can be marked valid. Rationale: beyond a few hours the aircraft has typically stayed overnight.
+- **Airport mismatches:** 112,341 pairs marked valid had incoming destination different from next origin. Of these, 56,539 involve inferred diversions and 55,802 are not diverted (real chain gaps). All excluded. **Amulya confirmed** (15 Nov 2026) that she will add the `incoming_dest == next_origin` condition to the validity checks and asked us to keep excluding these 112,341 pairs. Cross-check: her modelling pipeline already excludes discontinuous pairs, since her training rows (5,226,896) plus test rows (1,306,733) equal 6,533,629, exactly our airport-consistent count.
+- **Missing delay values:** none among the airport-consistent valid pairs (valid pairs require actual arrival and departure times), so no delay value is imputed and no pair is dropped for a missing delay. Recovery denominators are the late pairs (348,709 of 1,634,841).
 - Only flights that actually operated are in the sample (cancelled flights are outside the analysis).
 - Minimum scheduled ground time in the modelling set is 0 minutes; retained, noted as a data-quality caveat.
 - Modelling set: **5,909 aircraft**.
@@ -129,7 +130,7 @@ One **aircraft rotation pair**: an incoming flight and the next flight on the sa
 - **Models compared on identical test rows:** (1) training-mean baseline, (2) training-median baseline, (3) core, (4) core + weather, (5) core + weather + congestion.
 - **Metrics:** MAE (primary) and RMSE (heavy-tailed delays inflate RMSE).
 - **Uncertainty:** paired bootstrap over **test aircraft**, 2,000 resamples (1,000 in robustness runs), seed 42, 95% percentile intervals on metric differences.
-- **Amulya's baseline (MAE 16.253 vs 15.547)** has **not** been reproduced; her split is pending **[TEAM]**. This analysis is a separately defined experiment.
+- **Amulya's baseline (MAE 16.253 vs 15.547) is reported as context and not reproduced here.** Her reported split (details to be re-checked by her against the saved run output **[PENDING]**): chronological, earliest 80% for training and latest 20% for testing; cutoff 2024-10-20 13:25:00 UTC; 5,226,896 training rows and 1,306,733 test rows; both models on identical test rows; seed 42 configured (the split itself is deterministic). Her test period (after 20 Oct) lies outside Jan/Jun/Jul/Aug, the only months with Dhanush's prior-day features, so those features cannot be evaluated on her split. Her weather is also a different definition (hourly observations before arrival). This analysis is therefore a **separately defined experiment**; the two sets of numbers are not compared directly.
 
 ---
 
@@ -156,7 +157,7 @@ One **aircraft rotation pair**: an incoming flight and the next flight on the sa
 
 **Subgroups (descriptive).** Weather gain largest in January (0.175) and for incoming delays of 15 to 60 min (0.150); near zero for delays above 60 min. For the 15 busiest origins, weather gain is 0.139 and congestion gain is -0.230; for other airports 0.014 and +0.259.
 
-**Recovery [TEAM: definition].** late = incoming arrival delay >= 15 min; recovered = next departure delay < 15 min (against scheduled departure). 348,709 late pairs (21.3%); **22.0% recovered** (CI 21.7% to 22.3%, 5,742 aircraft). Recovery by scheduled ground time: 7.8% (<= 45 min), 14.8% (45 to 60), 29.6% (60 to 90), 56.5% (90 to 180). The recovery rate depends strongly on the thresholds (sensitivity grid in `results/recovery_sensitivity.csv`).
+**Recovery [CONFIRMED by team reply].** late = incoming arrival delay >= 15 min; recovered = next departure delay < 15 min (against scheduled departure). 348,709 late pairs (21.3%); **22.0% recovered** (CI 21.7% to 22.3%, 5,742 aircraft). Recovery by scheduled ground time: 7.8% (<= 45 min), 14.8% (45 to 60), 29.6% (60 to 90), 56.5% (90 to 180). The recovery rate depends strongly on the thresholds (sensitivity grid in `results/recovery_sensitivity.csv`). Denominator: all late pairs. No missing delay values exist in the sample.
 
 **Network.** Nodes = 343 airports; directed edges = 6,367 routes weighted by flight count. Top 10 airports = 33.7% of departures; top 20 = 52.2%; 19 airports carry half. Correlations of centrality with mean departure delay are weak (Spearman 0.06 to 0.21, 170 airports). Descriptive only.
 
@@ -186,7 +187,7 @@ Full tables and wording: see `findings_and_limitations.md`.
 8. Small subgroups are noisy; subgroup results are untested.
 9. Recovery results depend on thresholds; 283 pairs have inferred status.
 10. 1.69% of valid pairs had an airport mismatch and were excluded.
-11. Amulya's baseline is not reproduced.
+11. Amulya's hourly-weather baseline (MAE 16.253 vs 15.547) is on a different, later test period and weather definition and is not reproduced here; her weather gain (0.71 min, 4.3%) cannot be compared with ours (0.07 min, 0.56%) because period, weather definition and pair selection differ.
 12. XWA weather station match is approximate (63 km).
 13. Network metrics are computed on four months only.
 
@@ -196,15 +197,15 @@ Full tables and wording: see `findings_and_limitations.md`.
 
 | # | Decision | Status |
 |---|---|---|
-| 1 | Ground-time cutoff: 180 min primary | **[TEAM]** awaiting reply |
-| 2 | Recovery definition (15 / 15 min) | **[TEAM]** awaiting reply |
-| 3 | "Adjusted association" wording | **[TEAM]** awaiting reply |
-| 4 | Network ownership (Dhanush produces, I validate and interpret) | **[TEAM]** awaiting reply |
-| 5 | Features from next flight only, or also incoming destination | **[TEAM]** awaiting reply |
-| 6 | Amulya's train/test split for baseline reproduction | **[TEAM]** awaiting reply |
-| 7 | Dhanush: network metrics used descriptively only | **[TEAM]** awaiting reply |
+| 1 | Ground-time cutoff: 180 min primary | **Agreed** (team reply, 15 Nov 2026) |
+| 2 | Recovery definition (15 / 15 min) | **Agreed**; document denominators and missing-delay handling (done, section 5 and 11) |
+| 3 | "Adjusted association" wording | **Agreed** |
+| 4 | Network ownership (Dhanush produces, I validate and interpret) | **Agreed** |
+| 5 | Features from next flight only, or also incoming destination | **Agreed**: next flight primary; incoming destination only as a separate sensitivity experiment if available at prediction time (not run) |
+| 6 | Amulya's train/test split for baseline reproduction | **Received** (chronological, cutoff 2024-10-20 13:25 UTC, 5,226,896 / 1,306,733 rows); Amulya to re-verify against saved output **[PENDING]**. Not reproducible with the four-month features. |
+| 7 | Network metrics used descriptively only | **Agreed** in team reply (keeping them out of predictive features) |
 
-Update this table with the replies before the final version.
+Also agreed: Amulya will add the continuity condition to her validity checks.
 
 ---
 
