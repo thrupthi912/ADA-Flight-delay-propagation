@@ -1,170 +1,118 @@
-# ADA Flight Delay Propagation — Thrupthi G D's Data Pipeline
+# Quantifying Aircraft-Rotation Delay Propagation Under Operational and Environmental Confounding
 
-**Quantifying Aircraft-Rotation Delay Propagation Under Operational and Environmental Confounding**
 
-An ADA course project that reconstructs aircraft rotations from the BTS On-Time Performance
-dataset and estimates the association between an inbound flight's arrival delay and the
-departure delay of the next flight operated by the same aircraft, while accounting for
-turnaround time, weather, congestion, and other operational factors.
+## Team
 
----
+| Team member | SRN | Main contribution |
+|---|---|---|
+| Thrupthi G D | PES1UG24AM476 | BTS data ingestion, preprocessing, timestamp reconstruction and data-quality validation |
+| Amulya P | PES1UG24AM458 | Aircraft-rotation reconstruction, turnaround analysis, core modelling and hourly-weather experiment |
+| Anagha Kaushik | PES1UG24AM459 | Statistical modelling, aircraft-level uncertainty estimates, robustness, recovery and final analysis |
+| Dhanush R | PES1UG24AM427 | Weather/station matching, congestion features and airport-network data/metrics |
 
-## Team and responsibility split
+## Project overview
 
-| Member | Responsibility |
-|--------|----------------|
-| **Thrupthi G D** | Repository, BTS ingestion, initial cleaning, data dictionary, data-quality report, preprocessing tests |
-| Amulya | Aircraft rotation and turnaround analysis (consecutive-flight linking, pair dataset, ground-time/slack/buffer, validation, descriptives) |
-| Anagha Kaushik | Statistical modelling and recovery analysis (baseline/adjusted models, CIs, persistence/recovery, robustness, plots) |
-| Dhanush R | Weather/congestion integration and airport-network analysis (NOAA/FAA joins, coverage, network metrics) |
+Aircraft delays can carry forward when the same aircraft operates consecutive flights. This project reconstructs aircraft rotations from U.S. Bureau of Transportation Statistics (BTS) flight records and studies the **adjusted association** between an incoming flight's arrival delay and the next flight's departure delay. Scheduled turnaround time, prior-calendar-day weather and scheduled airport congestion are examined as additional information. The project also studies delay recovery and describes the airport network. The study is observational and does not establish causal effects.
 
-This repository currently contains **Thrupthi's** deliverables. The other
-modules (`src/aircraft_rotations.py`, `src/external_features.py`,
-`src/modelling.py`, `src/network_analysis.py`) are owned by teammates.
+## Data sources and study sample
 
----
+- **BTS Reporting Carrier On-Time Performance (2024):** flight dates, tail numbers, airports, scheduled/actual times, arrival/departure delays and operational fields. The paper reports 7,079,081 cleaned flights, 6,841,162 rotation-eligible flights and 7,052,817 candidate consecutive-flight pairs.
+- **NOAA Global Summary of the Day (GSOD):** historical daily weather summaries matched to airports through weather stations. The paper reports 343 airport matches: 334 by ICAO code, 8 through an extended ICAO list and 1 geographic fallback.
+- **Airport reference/time-zone data:** airport identifiers, locations and time-zone information used for timestamp reconstruction, station matching and network construction.
 
-## Dataset source
+The final GSOD analysis covers **January, June, July and August 2024**. It starts with 6,645,970 valid connections, retains 6,533,629 with incoming destination equal to next origin, applies a scheduled-ground-time cutoff of 180 minutes, restricts to the four feature months, and joins 1,634,841 pairs to weather/congestion features. The final sample contains 5,909 aircraft. See the paper's Table I for the full sample-flow counts.
 
-U.S. Bureau of Transportation Statistics (BTS), "Reporting Carrier On-Time Performance (1987-present)",
-2024 monthly downloads from <https://www.transtats.bts.gov/>
+## Methodology
 
-12 monthly raw files, one per calendar month of 2024.
+1. Clean BTS records, standardize fields, validate identifiers and reconstruct UTC timestamps for consistent cross-airport chronology.
+2. Link consecutive flights sharing a tail number to form incoming/next-flight rotation pairs.
+3. Derive scheduled ground time and turnaround measures; validate pair identifiers against the flight table.
+4. Match airports to NOAA GSOD stations and construct prior-calendar-day weather features.
+5. Construct scheduled-timetable congestion counts using trailing 1-hour and 3-hour windows. The reference flight is excluded from its own window.
+6. Join features to the next flight using a six-column natural key (date, airline, flight number, origin, destination and scheduled UTC departure), not row position.
+7. Fit histogram-based gradient-boosted regression models and compare core, core + weather, and core + weather + congestion specifications.
+8. Evaluate delay recovery and describe airport-network structure separately from predictive modelling.
 
----
+### Prediction target and features
 
-## Directory structure
+The primary outcome is **the next flight's departure delay in minutes**. Core predictors include incoming arrival delay, scheduled ground time, month, weekday, scheduled UTC departure hour and carrier. The weather model adds five variables: temperature, dew point, visibility, wind and precipitation. Gust is collected but excluded from the primary weather model because it is missing in 31.2% of rows and is not imputed as zero. The congestion model adds five scheduled-traffic counts.
 
-```
-ADA-Flight-delay-propagation/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── conftest.py
-├── data/
-│   ├── raw/
-│   │   └── <Month>/T_ONTIME_REPORTING.csv   # 12 monthly BTS files (gitignored)
-│   ├── airport_timezones.csv               # 2036 US airports with IANA timezones
-│   └── processed/
-│       ├── flights_clean.csv                 # all 12 months combined, cleaned
-│       ├── flights_rotation_eligible.csv     # strict rotation cohort
-│       ├── flights_sensitivity_eligible.csv  # sensitivity cohort (unknown diversion)
-│       ├── duplicate_records.csv
-│       ├── column_mapping.json
-│       └── monthly/
-│           ├── <Month>_clean.csv             # per-month cleaned
-│           └── <Month>_rotation_eligible.csv
-├── reports/
-│   ├── data_quality_report.md
-│   └── data_quality_summary.json
-├── src/
-│   ├── data_ingestion.py     # load and validate raw BTS CSVs
-│   ├── preprocessing.py      # clean, standardize, timestamp reconstruction
-│   └── airport_timezones.py  # airport IANA timezone lookup
-├── scripts/
-│   ├── run_pipeline.py       # full 12-month pipeline
-│   └── __init__.py
-├── tests/
-│   ├── test_data_ingestion.py
-│   ├── test_preprocessing.py
-│   └── fixtures/
-└── docs/
-    └── data_dictionary.md
-```
+### Main model evaluation
 
----
+The paper reports an 80/20 **aircraft-level** split, so an aircraft does not appear in both training and test sets. Training contains 1,302,931 pairs; testing contains 331,910 pairs across 1,181 aircraft. The model uses 200 boosting iterations, default settings and seed 42. The paper reports:
 
-## Setup
+| Model | Test MAE (min) | Test RMSE (min) |
+|---|---:|---:|
+| Training-mean baseline | 25.415 | 50.752 |
+| Training-median baseline | 20.628 | 53.246 |
+| Core | 12.639 | 37.337 |
+| Core + weather | 12.569 | 37.225 |
+| Core + weather + congestion | 12.531 | 37.216 |
 
-```bash
-pip install -r requirements.txt
-```
+Weather reduces MAE by 0.071 minutes versus core (95% aircraft-bootstrap CI: 0.055–0.087). Congestion reduces MAE by a further 0.038 minutes (95% CI: 0.022–0.054). These gains are statistically detectable but practically small. The additional congestion RMSE gain is not distinguishable from zero. Confidence intervals use paired bootstrap resampling of test aircraft (2,000 resamples).
 
-Tested with Python 3.15, pandas 3.1, pytest 9.1. Any modern Python 3.10+ with pandas >= 2.0 should work.
+**Keep the separate earlier hourly-weather experiment distinct.** Amulya's earlier core/weather MAEs (16.253/15.547) came from a different experiment and have not been reproduced on the final paper's sample/split/target setup. They are not part of the GSOD comparison above and should not be compared directly.
 
----
+## Additional analyses
 
-## How to run the full pipeline
+### Delay recovery
+
+An incoming flight is classified as late when its arrival delay is at least 15 minutes. It is classified as recovered when the next flight's departure delay is below 15 minutes. Of 348,709 late incoming flights, 22.0% were followed by a departure below the 15-minute threshold. Recovery varies with scheduled turnaround: 7.8% for up to 45 minutes, 14.8% for 45–60 minutes, 29.6% for 60–90 minutes and 56.5% for 90–180 minutes. These are associations, not evidence that adding turnaround time causes recovery.
+
+### Airport network
+
+The descriptive network contains 343 airport nodes and 6,367 directed routes, weighted by flight count. The independently rebuilt edge list matched the supplied route counts. The top 20 airports account for 52.2% of departures; 19 airports account for half. Network centrality is descriptive and is not used as a predictive feature or interpreted causally.
+
+## Repository structure
+
+The repository snapshot includes:
+
+- `src/`: preprocessing, airport time-zone handling, weather/station matching, congestion and network feature modules.
+- `scripts/`: pipeline, weather, congestion, station-map, external-feature and network-analysis runners.
+- `tests/`: unit and audit tests for preprocessing, station matching, weather and congestion features.
+- `notebooks/person4_analysis.ipynb`: statistical modelling, model comparisons, robustness, recovery and network analysis.
+- `reports/`: data-quality, weather, congestion, station-matching and network reports/figures.
+- `results/`: model comparison, bootstrap, robustness, recovery, subgroup and network outputs.
+- `docs/`: data dictionary, analysis contract, findings/limitations and handoff documentation.
+
+Large raw and processed datasets are excluded from the repository by `.gitignore`; users need access to the corresponding project data files separately.
+
+## Reproducibility and data requirements
+
+The repository snapshot contains scripts and tests, but the full raw/processed data required to regenerate every result is not bundled. Obtain the exact BTS, weather and processed feature files from the team's shared data location and preserve the versions/order expected by each pipeline.
+
+Install dependencies:
 
 ```bash
-python -m scripts.run_pipeline
+python -m venv .venv
+source .venv/bin/activate        # macOS/Linux
+python -m pip install -r requirements.txt
 ```
 
-Processes all 12 months in `data/raw/` and writes cleaned outputs to `data/processed/`
-and reports to `reports/`.
-
----
-
-## How to run a single month (for debugging)
+Run the available test suite:
 
 ```bash
-python -m src.data_ingestion data/raw/January/T_ONTIME_REPORTING.csv
+python -m pytest -v
 ```
 
----
+The repository provides separate runners under `scripts/` for preprocessing, weather, congestion, external-feature construction and network analysis. Check each runner's arguments and required input paths before execution; do not assume that running one script alone reproduces the final notebook results. The final analysis notebook also requires the corresponding large datasets and result inputs.
 
-## How to run tests
+**Row-ID caution:** `incoming_row_id` and `next_row_id` in the rotation-pair file are zero-based row positions in the exact `flights_clean_recovered.csv` used when the pairs were generated. Do not sort, filter or rewrite that file before using those IDs. Person 4's final feature integration uses the documented natural key rather than relying on row IDs.
 
-```bash
-python -m pytest tests/ -v
-```
+## Limitations
+- **Retrospective weather data:** GSOD data is published with a delay, limiting its use for real-time operational prediction.
+- **Data coverage:** The analysis uses selected months from 2024 and is restricted to flights with valid aircraft rotations and available features.
+- **Predictive scope:** The results show statistical associations, not causal relationships, and may not generalise to all operational conditions.
 
----
+## Interpretation
+Adding weather and congestion features produced statistically significant improvements in prediction accuracy, but the gains were practically small. This suggests that incoming flight delays and scheduled turnaround time explain much of the predictable delay propagation, while weather and airport congestion provide only modest additional information. Recovery rates also increased with longer scheduled ground times, highlighting the importance of turnaround buffers. However, these findings are observational and should not be interpreted as causal effects.
 
-## Key limitations
+## References
 
-- **DIVERTED absent from 8 of 12 months**: February, March, April, May, September, October,
-  November, and December do not include the DIVERTED column in the BTS download. Flights
-  from those months cannot be confirmed non-diverted and therefore appear only in the
-  sensitivity cohort, not the strict rotation-eligible cohort.
-- **All BTS times are local clock times**: UTC conversion requires the airport timezone lookup
-  (`data/airport_timezones.csv`). Airports not in the map produce local-only timestamps,
-  flagged as `tz_origin_known=False`.
-- **DISTANCE absent from January**: Distance-based analysis requires special handling for January.
-- **WHEELS_OFF/ON available in January only**: Ground time analysis via wheels timestamps is
-  limited to January.
-- **This is an observational study**: No causal claims about delay propagation are supported
-  by the data alone.
-
----
-
-## Schema variations by month
-
-| Month | DIVERTED | WHEELS_OFF/ON | DISTANCE |
-|-------|----------|---------------|----------|
-| January | Yes | Yes | No |
-| February | No | No | Yes |
-| March | No | No | Yes |
-| April | No | No | Yes |
-| May | No | No | Yes |
-| June | Yes | No | Yes |
-| July | Yes | No | Yes |
-| August | Yes | No | Yes |
-| September | No | No | Yes |
-| October | No | No | Yes |
-| November | No | No | Yes |
-| December | No | No | Yes |
-
----
-
-## What the cleaning step does
-
-1. **Standardize column names** to snake_case; the original → standardized mapping is written to `column_mapping.json`.
-2. **Coerce types** explicitly (delays/elapsed/distance → numeric, indicators → 0/1, flight_date → datetime).
-3. **Reconstruct UTC timestamps** by interpreting scheduled departure clock times in the origin airport's timezone
-   and converting to UTC. Arrival UTC is derived from UTC departure + actual elapsed time.
-4. **Validate and flag** tail numbers, timestamps, cancellation/diversion indicators, delay fields, and
-   implausible values. Records are flagged, not silently deleted.
-5. **Separate rotation cohorts**: strict cohort (confirmed non-diverted) vs sensitivity cohort (unknown diversion status).
-6. **Remove exact duplicate rows** and log them.
-7. **Write a reproducible data-quality report** to `reports/`.
-
-See `docs/data_dictionary.md` for the full field list, units, missing-value conventions, and validation rules.
-
----
-
-## Reproducibility
-
-The cleaning pipeline is deterministic for a given input file: running `scripts/run_pipeline.py`
-on the same raw CSVs always produces the same cleaned dataset and the same `reports/data_quality_summary.json`.
-The synthetic test fixtures in `tests/fixtures/` let the tests run without the full dataset.
+1. AhmadBeygi et al. (2008), analysis of delay propagation in passenger airline networks.
+2. Pyrgiotis et al. (2013), modelling delay propagation within an airport network.
+3. Beatty et al. (1999), preliminary evaluation of flight delay propagation through an airline schedule.
+4. U.S. Bureau of Transportation Statistics, Reporting Carrier On-Time Performance.
+5. NOAA National Centers for Environmental Information, Global Summary of the Day.
+6. Pedregosa et al. (2011), *Scikit-learn: Machine Learning in Python*.
+7. Efron (1979), *Bootstrap Methods: Another Look at the Jackknife*.
